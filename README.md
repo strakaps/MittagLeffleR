@@ -3,11 +3,15 @@
 MittagLeffleR
 =============
 
-The MittagLeffleR `R` package calculates probabilities, quantiles and random variables from both types Mittag-Leffler distributions.
+The MittagLeffleR `R` package
+
+-   calculates probability densities, probabilities and quantiles
+-   simulates random variables from both types Mittag-Leffler distributions
+-   fits a Mittag-Leffler distribution to data.
 
 The first type Mittag-Leffler distribution is a heavy-tailed distribution, and occurs mainly as a waiting time distribution in problems with "fractional" time scales, e.g. times between earthquakes.
 
-The second type Mittag-Leffler distribution is light-tailed and, in a sense, inverse to the family of sum-stable distributions. It is used for time-changes of stochastic processes, to create "time-fractional" evolutions, e.g. anomalous diffusion processes.
+The second type Mittag-Leffler distribution is light-tailed, and "inverse" to the sum-stable distributions. It typically models the number of events in fractional systems and is used for time-changes of stochastic processes, e.g. anomalous diffusion processes.
 
 Installation
 ------------
@@ -22,33 +26,28 @@ devtools::install_github("strakaps/MittagLeffler")
 Examples
 --------
 
-### Fitting a Mittag-Leffler distribution to a random dataset
+### Fitting a Mittag-Leffler distribution
 
-Fit a Mittag-Leffler distribution (first type) to a collection of Mittag-Leffler random variables:
+Generate a dataset first:
 
 ``` r
 library(MittagLeffleR)
-y = rml(n = 100, tail = 0.9, scale = 2)
-mlml <- function(X) {
-  log_l <- function(theta) {
-    #transform parameters so can do optimization unconstrained
-    theta[1] <- 1/(1+exp(-theta[1]))
-    theta[2] <- exp(theta[2])
-    -sum(log(dml(X,theta[1],theta[2])))
-  }
-  ml_theta <- stats::optim(c(0.5,0.5), fn=log_l)$par
-  #transform back
-  ml_a <- 1/(1 + exp(-ml_theta[1]))
-  ml_d <- exp(ml_theta[2])
-  return(list("tail" = ml_a, "scale" = ml_d))
-}
-mlml(y)
-#> $tail
-#> [1] 0.8716385
-#> 
-#> $scale
-#> [1] 1.416363
+y = rml(n = 10000, tail = 0.9, scale = 2)
 ```
+
+Fit the distribution:
+
+``` r
+logMomentEstimator(y, 0.95)
+#>        nu     delta      nuLo      nuHi   deltaLo   deltaHi 
+#> 0.8979336 2.0222474 0.8975863 0.8982810 2.0202685 2.0242263
+```
+
+Read off
+
+-   the shape parameter 0 &lt; *ν* &lt; 1,
+-   the scale parameter *δ* &gt; 0,
+-   their 95% confidence intervals.
 
 ### Calculate the probability density of an anomalous diffusion process
 
@@ -74,8 +73,8 @@ plot(x,p, type='l', main = "Fractional diffusion with drift at t=1")
 
 ### Vignettes
 
-Vignettes are written in R Markdown.
+To display the vignettes, do `help(package="MittagLeffleR")` and click on the vignettes link.
 
 -   **MLdist.Rmd:** shows plots with the basic properties of the two distributions.
--   **probsNquantiles.Rmd:** explains how probability densities, quantiles and random variables are calculated using the Mittag-Leffler function and the package `stabledist`
--   **parametrisation.Rmd:** explains how the parameters for the stable distribution were chosen.
+-   **probsNquantiles.Rmd:** details about how probability densities, quantiles and random variables are calculated using the Mittag-Leffler function and the package `stabledist`
+-   **parametrisation.Rmd:** details about how the parameters for the stable distribution were chosen.
