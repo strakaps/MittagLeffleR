@@ -2,16 +2,18 @@
 title: "Plots of the Mittag-Leffler distributions"
 author: "Gurtek Gill, Peter Straka"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_vignette: default
+  rmarkdown::pdf_document: default
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Plots of the Mittag-Leffler distributions}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  \usepackage[utf8]{inputenc}
 ---
 
 Set parameters:
 
-```{r}
+```{r setup, echo=TRUE}
 library(MittagLeffleR)
 tail <- 0.7
 scale <- 2
@@ -31,7 +33,7 @@ The straight dashed line in the second plot represents the function
 $x^{-\alpha}$, showing asymptotic equivalence to a power-law for 
 large values. 
 
-```{r, echo=FALSE}
+```{r, echo=TRUE, warning=FALSE}
 r <- rml(n = n, tail = tail, scale=scale)
 edfun <- ecdf(r)
 x <- seq(0.01,10,0.01)
@@ -59,7 +61,7 @@ lines(x,w, lty=2)
 
 A plot of the density:
 
-```{r, echo=FALSE}
+```{r, echo=TRUE}
 cutoff <- 10
 fac <- sum(r <= cutoff) / n
 r <- r[r <= cutoff]
@@ -78,7 +80,7 @@ The second type of Mittag-Leffler distribution is light-tailed, and in fact
 has finite moments of all orders: it drops off faster than the exponential
 distribution (dashed line).
 
-```{r, echo=FALSE, warning=FALSE}
+```{r, echo=TRUE, warning=FALSE}
 library(MittagLeffleR)
 n <- 10^5
 tail <- 0.6
@@ -102,7 +104,7 @@ lines(x,w, lty=2)
 
 A plot of the density:
 
-```{r, warning=FALSE, echo=FALSE}
+```{r, warning=FALSE, echo=TRUE}
 hist(r, freq = FALSE, breaks = 20)
 x <- seq(0.01,cutoff,0.01)
 y <- dml(x = x, tail = tail, scale=scale, second.type = TRUE)

@@ -2,17 +2,19 @@
 title: "Probabilities and Quantiles"
 author: "Peter Straka"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_vignette: default
+  rmarkdown::pdf_document: default
 bibliography: bibliography.bib
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Probabilities and Quantiles}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ## Introduction
 
-This vignette explains how the functions `dml()`, `pml()`, `qml()` and
+This vignette details how the functions `dml()`, `pml()`, `qml()` and
 `rml()` are evaluated using the Mittag-Leffler function `mlf()` and 
 functions from the package `stabledist`. 
 Evaluation of the Mittag-Leffler function relies on the algorithm by

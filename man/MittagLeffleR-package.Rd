@@ -21,6 +21,6 @@ is implemented as \code{\link{mlf}}.
 
 \section{Log-moments estimator}{
 
-see \code{\link{logMomentEstimator}}
+see \code{\link{logMomentEstimator}}.
 }
 

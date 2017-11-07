@@ -1,18 +1,18 @@
 ---
-title: "Parametrization of the sum-stable distribution"
+title: "Details of Mittag-Leffler random variate generation"
 author: "Peter Straka"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: rmarkdown::pdf_document
 bibliography: bibliography.bib
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Details of Mittag-Leffler random variate generation}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-## First type Mittag-Leffler distribution
+# First type Mittag-Leffler distribution
 
-### Random variate generation
+## Random variate generation
 
 For the efficient generation of random variates, we use the following useful fact
 (see e.g. Theorem 19.1 in @Haubold2011a):
@@ -21,8 +21,29 @@ A standard $\alpha$-Mittag-Leffler random variable $Y$ has the representation:
 $$Y \stackrel{d}{=} X^{1/\alpha} Z$$
 
 where $X$ is standard exponentially distributed, $Z$ is $\alpha$-stable with 
-Laplace Transform $\mathbf E[\exp(-sZ)] = \exp(-s^\alpha)$, 
+Laplace Transform 
+$$\mathbf E[\exp(-sZ)] = \exp(-s^\alpha),$$ 
 $X$ and $Z$ are independent, and $\stackrel{d}{=}$ means equality in distribution.
+
+#### Generating $X$ 
+
+```{r}
+n <- 5
+x <- rexp(n)
+```
+
+
+#### Generating $Z$
+
+To generate such random variates $Z$, we use
+
+```{r, echo=TRUE}
+a <- 0.8
+sigma <- (cos(pi*a/2))^(1/a)
+z <- stabledist::rstable(n = n, alpha = a, beta = 1, gamma = sigma, delta = 0, pm = 1)
+```
+
+Below are the details of the calculation. 
 We use the parametrization of the stable distribution by @SamorodnitskyTaqqu 
 as it has become standard. For $\alpha \in (0,1)$ and $\alpha \in (1,2)$, 
 
@@ -60,19 +81,10 @@ But then $\sigma^\alpha = \cos(\pi \alpha/2)$, and we see that
 $$Y \sim S(\alpha, \beta, \sigma, a) 
 = S(\alpha, 1, \cos(\pi\alpha/2)^{1/\alpha}, 0)$$
 
-To generate such random variates $Z$, use e.g.
 
-```{r, echo=TRUE}
-a <- 0.8
-n = 5
-sigma <- (cos(pi*a/2))^(1/a)
-z <- stabledist::rstable(n = n, alpha = a, beta = 1, gamma = sigma, delta = 0, pm = 1)
-```
-
-and to generate $Y$, 
+#### Generating $Y$
 
 ```{r}
-x <- rexp(n)
 y <- x^(1/a) * z
 y
 ```

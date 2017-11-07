@@ -9,7 +9,7 @@ logMomentEstimator(x, a = 0.05)
 \arguments{
 \item{x}{A vector of non-negative data.}
 
-\item{alpha}{Confidence level is 1 - alpha.}
+\item{alpha}{Confidence intervals are calculated at level 1 - alpha.}
 }
 \value{
 A named vector with entries (nu     delta      nuLo      nuHi   deltaLo   
@@ -21,4 +21,15 @@ by matching with the first two empirical log-moments.
 }
 \examples{
 logMomentEstimator(rml(n = 100000, scale = 0.03, tail = 0.99))
+}
+\references{
+Cahoy, D. O., Uchaikin, V. V., & Woyczynski Wojbor, W. A. (2010).  
+Parameter estimation for fractional Poisson processes.  
+Journal of Statistical Planning and Inference, 140(11), 3106–3120. 
+\url{http://doi.org/10.1016/j.jspi.2010.04.016}
+
+Cahoy, D. O. (2013). 
+Estimation of Mittag-Leffler Parameters. 
+Communications in Statistics - Simulation and Computation, 42(2), 303–315. 
+\url{http://doi.org/10.1080/03610918.2011.640094}
 }
