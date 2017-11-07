@@ -2,7 +2,7 @@
 % Please edit documentation in R/MittagLefflerFunc.R
 \name{mlf}
 \alias{mlf}
-\title{The Mittag Leffler Function.}
+\title{Mittag-Leffler Function.}
 \usage{
 mlf(z, a, b = 1, g = 1)
 }

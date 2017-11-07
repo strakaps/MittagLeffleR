@@ -30,7 +30,7 @@
 # The code below is adapted from: 
 # https://au.mathworks.com/matlabcentral/fileexchange/48154-the-mittag-leffler-function
 
-#' The Mittag Leffler Function.
+#' Mittag-Leffler Function.
 #' 
 #' The generalized (two-parameter) Mittag-Leffer function is defined by the
 #' power series
@@ -39,7 +39,6 @@
 #' for complex \eqn{z} and complex \eqn{\alpha, \beta} with
 #' \eqn{Real(\alpha) > 0} (only implemented for real valued parameters).
 #' 
-#' @name mlf
 #' @rdname mlf
 #' @export
 #' @param z The argument (real-valued)

@@ -1,4 +1,4 @@
-#' The Mittag-Leffler Distribution.
+#' Distribution functions and random number generation.
 #'
 #' Probability density, cumulative distribution
 #' function, quantile function and random variate generation for the
@@ -42,9 +42,7 @@
 #' In Wikipedia, The Free Encyclopedia.
 #' \url{https://en.wikipedia.org/w/index.php?title=Mittag-Leffler_distribution&oldid=778429885}
 #' 
-#' @rdname MittagLeffleR
-#' @name Mittag-Leffler
-NULL
+#' @name MLdistribution
 
 
 #' @param x,q vector of quantiles.
@@ -59,7 +57,8 @@ NULL
 #' @examples
 #' dml(1, 0.8)
 #' dml(1, 0.6, second.type=TRUE)
-#' @name dml
+#' @name Mittag-Leffler
+#' @family Mittag Leffler Distribution
 #' @export
 dml <- function(x,tail,scale=1,log=FALSE, second.type=FALSE){
   if (length(tail) > 1){
@@ -95,9 +94,11 @@ dml2 <- function(u,tail) {
 }
 
 
-#' @describeIn MittagLeffleR Cumulative Probability Function
 #' @examples
 #' pml(2, 0.7, 1.5)
+#' @name pml
+#' @rdname MittagLeffleR
+#' @family Mittag Leffler Distribution
 #' @export
 pml <- function(q, tail, scale=1, second.type=FALSE, lower.tail=TRUE, 
                 log.p=FALSE) {
@@ -134,6 +135,7 @@ pml2 <- function(q,tail) {
 #' @rdname MittagLeffleR
 #' @examples
 #' qml(p = c(0.25, 0.5, 0.75), tail = 0.6, scale = 100)
+#' @family Mittag Leffler Distribution
 #' @export
 #' @param p vector of probabilities.
 
@@ -194,6 +196,7 @@ qml2 <- function(p, tail){
 #' mlml(rml(n = 100, tail = 0.9, scale = 2))
 
 #' @export
+#' @family Mittag Leffler Distribution
 #' @param n number of observations. If length(n) > 1, the length is taken
 #'        to be the number required.
 rml <- function(n,tail,scale=1, second.type=FALSE){
