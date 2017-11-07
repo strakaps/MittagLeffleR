@@ -1,31 +1,14 @@
-#' Mittag-Leffler Distribution
+#' The Mittag-Leffler Distribution.
 #'
 #' Probability density, cumulative distribution
 #' function, quantile function and random variate generation for the
-#' two types of Mittag-Leffler distribution, as well as the 1, 2 and 3
-#' parameter Mittag-Leffler function. 
+#' two types of Mittag-Leffler distribution.
 #'
-#' @param x,q vector of quantiles.
-#' @param p vector of probabilities.
-#' @param n number of observations. If length(n) > 1, the length is taken
-#'        to be the number required.
-#' @param tail tail parameter.
-#' @param scale scale parameter.
-#' @param second.type logical; if FALSE (default), 
-#'        first type of Mittag-Leffler distribution is assumed.
-#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
-#' @param lower.tail logical; if TRUE, probabilities are \eqn{P[X \le x]}
-#'        otherwise, \eqn{P[X > x]}
-
-#' @details
-#' The generalized (two-parameter) Mittag-Leffer function is defined by the
-#' power series
-#'     \deqn{E_{\alpha,\beta} (z) = \sum_{k=0}^\infty  z^k / \Gamma(\alpha
-#'     k + \beta) }
-#' for complex \eqn{z} and complex \eqn{\alpha, \beta} with
-#' \eqn{Real(\alpha) > 0} (only implemented for real valued parameters)
 #'
-#' The **first type** of Mittag-Leffler distribution assumes the Mittag-Leffler
+#' The Mittag-Leffler function \code{\link{mlf}} defines two types of 
+#' probability distributions:
+#'
+#' The \strong{first type} of Mittag-Leffler distribution assumes the Mittag-Leffler
 #' function as its tail function, so that the CDF is given by
 #' \deqn{F(q; \alpha, \tau) = 1 - E_{\alpha,1} (-(q/\tau)^\alpha)}
 #' for \eqn{q \ge 0}, tail parameter \eqn{0 < \alpha \le 1},
@@ -38,7 +21,7 @@
 #' distribution. For \eqn{0 < \alpha < 1}, it is (very) heavy-tailed, i.e.
 #' has infinite mean.
 #'
-#' The **second type** of Mittag-Leffler distribution is defined via the
+#' The \strong{second type} of Mittag-Leffler distribution is defined via the
 #' Laplace transform of its density f:
 #' \deqn{\int_0^\infty \exp(-sx) f(x; \alpha, 1) dx = E_{\alpha,1}(-s)}
 #' It is light-tailed, i.e. all its moments are finite.
@@ -55,24 +38,28 @@
 #' Functions and Their Applications. Journal of Applied Mathematics, 2011, 
 #' 1–51. \url{http://doi.org/10.1155/2011/298628}
 #' 
-#' Garrappa, R. (2015). Numerical Evaluation of Two and Three Parameter
-#' Mittag-Leffler Functions. SIAM Journal on Numerical Analysis, 53(3),
-#'  1350–1369. \url{http://doi.org/10.1137/140971191}
-#'
 #' Mittag-Leffler distribution. (2017, May 3).
 #' In Wikipedia, The Free Encyclopedia.
 #' \url{https://en.wikipedia.org/w/index.php?title=Mittag-Leffler_distribution&oldid=778429885}
-#'
-#' The Mittag-Leffler function. MathWorks File Exchange.
-#' \url{https://au.mathworks.com/matlabcentral/fileexchange/48154-the-mittag-leffler-function}
-
-#' @name MittagLeffleR
+#' 
+#' @rdname MittagLeffleR
+#' @name Mittag-Leffler
 NULL
 
+
+#' @param x,q vector of quantiles.
+#' @param tail tail parameter.
+#' @param scale scale parameter.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param second.type logical; if FALSE (default), 
+#'        first type of Mittag-Leffler distribution is assumed.
+#' @param lower.tail logical; if TRUE, probabilities are \eqn{P[X \le x]}
+#'        otherwise, \eqn{P[X > x]}
 #' @rdname MittagLeffleR
 #' @examples
 #' dml(1, 0.8)
 #' dml(1, 0.6, second.type=TRUE)
+#' @name dml
 #' @export
 dml <- function(x,tail,scale=1,log=FALSE, second.type=FALSE){
   if (length(tail) > 1){
@@ -108,7 +95,7 @@ dml2 <- function(u,tail) {
 }
 
 
-#' @rdname MittagLeffleR
+#' @describeIn MittagLeffleR Cumulative Probability Function
 #' @examples
 #' pml(2, 0.7, 1.5)
 #' @export
@@ -148,6 +135,7 @@ pml2 <- function(q,tail) {
 #' @examples
 #' qml(p = c(0.25, 0.5, 0.75), tail = 0.6, scale = 100)
 #' @export
+#' @param p vector of probabilities.
 
 qml <- function(p, tail, scale=1, second.type=FALSE, lower.tail=TRUE,
                 log.p=FALSE) {
@@ -206,6 +194,8 @@ qml2 <- function(p, tail){
 #' mlml(rml(n = 100, tail = 0.9, scale = 2))
 
 #' @export
+#' @param n number of observations. If length(n) > 1, the length is taken
+#'        to be the number required.
 rml <- function(n,tail,scale=1, second.type=FALSE){
   if (length(n) > 1){
     n <- length(n)

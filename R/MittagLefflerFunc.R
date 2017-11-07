@@ -30,16 +30,31 @@
 # The code below is adapted from: 
 # https://au.mathworks.com/matlabcentral/fileexchange/48154-the-mittag-leffler-function
 
-#' @name MittagLeffleR
-NULL
-#' @rdname MittagLeffleR
+#' The Mittag Leffler Function.
+#' 
+#' The generalized (two-parameter) Mittag-Leffer function is defined by the
+#' power series
+#'     \deqn{E_{\alpha,\beta} (z) = \sum_{k=0}^\infty  z^k / \Gamma(\alpha
+#'     k + \beta) }
+#' for complex \eqn{z} and complex \eqn{\alpha, \beta} with
+#' \eqn{Real(\alpha) > 0} (only implemented for real valued parameters).
+#' 
+#' @name mlf
+#' @rdname mlf
 #' @export
 #' @param z The argument (real-valued)
 #' @param a,b,g Parameters of the Mittag-Leffler distribution; see Garrappa
 #' @return \code{mlf} returns the value of the Mittag-Leffler function.
 #' @examples
 #' mlf(2,0.7)
-
+#' @references
+#' Garrappa, R. (2015). Numerical Evaluation of Two and Three Parameter
+#' Mittag-Leffler Functions. SIAM Journal on Numerical Analysis, 53(3),
+#'  1350–1369. \url{http://doi.org/10.1137/140971191}
+#'
+#' The Mittag-Leffler function. MathWorks File Exchange.
+#' \url{https://au.mathworks.com/matlabcentral/fileexchange/48154-the-mittag-leffler-function}
+#' 
 
 
 mlf <- function(z,a,b=1,g=1) {
