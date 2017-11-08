@@ -9,9 +9,9 @@ Authors@R: c(
             role = "aut"),
     person("Peter", "Straka", email = "p.straka@unsw.edu.au", 
             role = c("aut", "cre")))
-Description: Provides probability density, distribution function, 
-  quantile function and random variate generation for the Mittag-Leffler 
-  distributions, and the Mittag-Leffler function. Based on the algorithm
+Description: Calculates Mittag-Leffler probabilities and the Mittag-Leffler
+  function, generates Mittag-Leffler random variables,
+  and fits the Mittag-Leffler distribution to data. Based on the algorithm
   by Garrappa, R. (2015) <doi:10.1137/140971191>.
 URL: https://github.com/strakaps/MittagLeffleR
 BugReports: https://github.com/strakaps/MittagLeffleR/issues
