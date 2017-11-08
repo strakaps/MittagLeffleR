@@ -2,9 +2,7 @@
 title: "Plots of the Mittag-Leffler distributions"
 author: "Gurtek Gill, Peter Straka"
 date: "`r Sys.Date()`"
-output: 
-  rmarkdown::html_vignette: default
-  rmarkdown::pdf_document: default
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Plots of the Mittag-Leffler distributions}
   %\VignetteEngine{knitr::rmarkdown}

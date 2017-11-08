@@ -4,7 +4,7 @@
 \alias{logMomentEstimator}
 \title{Log-Moments Estimator for the Mittag-Leffler Distribution.}
 \usage{
-logMomentEstimator(x, a = 0.05)
+logMomentEstimator(x, alpha = 0.05)
 }
 \arguments{
 \item{x}{A vector of non-negative data.}
@@ -20,7 +20,7 @@ Tail and scale parameter of the Mittag-Leffler distribution are estimated
 by matching with the first two empirical log-moments.
 }
 \examples{
-logMomentEstimator(rml(n = 100000, scale = 0.03, tail = 0.99))
+logMomentEstimator(rml(n = 100000, scale = 0.03, tail = 0.99), alpha=0.95)
 }
 \references{
 Cahoy, D. O., Uchaikin, V. V., & Woyczynski Wojbor, W. A. (2010).  

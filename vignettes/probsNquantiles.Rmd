@@ -2,14 +2,12 @@
 title: "Probabilities and Quantiles"
 author: "Peter Straka"
 date: "`r Sys.Date()`"
-output: 
-  rmarkdown::html_vignette: default
-  rmarkdown::pdf_document: default
+output: rmarkdown::pdf_document
 bibliography: bibliography.bib
 vignette: >
   %\VignetteIndexEntry{Probabilities and Quantiles}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 ## Introduction
