@@ -3,6 +3,8 @@
 MittagLeffleR
 =============
 
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR) [![Downloads](http://cranlogs.r-pkg.org/badges/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR) [![DL\_Total](http://cranlogs.r-pkg.org/badges/grand-total/MittagLeffleR?color=blue)](https://cran.r-project.org/package=MittagLeffleR)
+
 The MittagLeffleR `R` package
 
 -   calculates probability densities, probabilities and quantiles
@@ -40,7 +42,7 @@ Fit the distribution:
 ``` r
 logMomentEstimator(y, 0.95)
 #>        nu     delta      nuLo      nuHi   deltaLo   deltaHi 
-#> 0.8979336 2.0222474 0.8975863 0.8982810 2.0202685 2.0242263
+#> 0.9031304 1.9668521 0.9027833 0.9034774 1.9649460 1.9687582
 ```
 
 Read off

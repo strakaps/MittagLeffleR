@@ -14,6 +14,10 @@ knitr::opts_chunk$set(
 
 # MittagLeffleR
 
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR)
+[![Downloads](http://cranlogs.r-pkg.org/badges/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR)
+[![DL_Total](http://cranlogs.r-pkg.org/badges/grand-total/MittagLeffleR?color=blue)](https://cran.r-project.org/package=MittagLeffleR)
+
 The MittagLeffleR `R` package 
 
 * calculates probability densities, probabilities and quantiles
