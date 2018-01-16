@@ -1,7 +1,8 @@
 #' The MittagLeffleR package.
 #' 
 #' Contains the Mittag-Leffler function, distributions and a
-#' Log-Moment estimator. 
+#' Log-Moment estimator.  For a browsable reference page, go to 
+#' \url{https://strakaps.github.io/MittagLeffleR/reference/index.html}
 #' 
 #' @section Mittag-Leffler Distribution:
 #' The functions \code{\link{dml}}, \code{\link{pml}}, \code{\link{qml}} 
