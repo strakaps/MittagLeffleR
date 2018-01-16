@@ -39,18 +39,29 @@ processes.
 
 ## Installation
 
+### Stable release on CRAN
+
 You can install MittagLeffleR from CRAN via 
 
 ```{r CRAN-installation, eval = FALSE}
 install.packages("MittagLeffleR")
+library(MittagLeffleR)
 ```
 
-or from GitHub via
+### Development version on Github
+
+Install the `devtools` package first, then 
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("strakaps/MittagLeffler")
+library(MittagLeffleR)
 ```
+
+## Usage
+
+See the reference manual at 
+[strakaps.github.io/MittagLeffleR/reference/index.html](https://strakaps.github.io/MittagLeffleR/reference/index.html)
 
 ## Examples
 
@@ -100,17 +111,12 @@ plot(x,p, type='l', main = "Fractional diffusion with drift at t=1")
 ```
 
 
-### Vignettes
+## Vignettes
 
-To display the vignettes, do `help(package="MittagLeffleR")` and 
-click on the link "User guides, package vignettes and other 
-documentation." 
+See the page 
+[strakaps.github.io/MittagLeffleR/articles/](https://strakaps.github.io/MittagLeffleR/articles/)
+for vignettes on 
 
-- **MLdist.Rmd:** shows plots with the basic properties of the two
-              distributions.
-- **probsNquantiles.Rmd:** details about how probability densities, quantiles
-              and random variables are calculated using the Mittag-Leffler
-              function and the package `stabledist`
-- **parametrisation.Rmd:** details about how the parameters for the stable
-              distribution were chosen. 
-
+* Plots of the Mittag-Leffler distributions
+* Details of Mittag-Leffler random variate generation
+* Probabilities and Quantiles

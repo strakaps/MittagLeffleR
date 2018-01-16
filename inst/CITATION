@@ -7,7 +7,7 @@ citEntry(entry = "manual",
             role = c("aut", "cre"))),
   title = "MittagLeffleR: Using the Mittag-Leffler distributions in R",
   year = "2017",
-  url = "https://github.com/rickygill01/MittagLeffler/",
+  url = "https://github.com/strakaps/MittagLeffler/",
   textVersion = "G. Gill and P. Straka (2017). MittagLeffleR: Using the 
                   Mittag-Leffler distributions in R."
 )

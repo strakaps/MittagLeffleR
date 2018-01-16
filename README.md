@@ -18,18 +18,29 @@ The second type Mittag-Leffler distribution is light-tailed, and "inverse" to th
 Installation
 ------------
 
+### Stable release on CRAN
+
 You can install MittagLeffleR from CRAN via
 
 ``` r
 install.packages("MittagLeffleR")
+library(MittagLeffleR)
 ```
 
-or from GitHub via
+### Development version on Github
+
+Install the `devtools` package first, then
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("strakaps/MittagLeffler")
+library(MittagLeffleR)
 ```
+
+Usage
+-----
+
+See the reference manual at [strakaps.github.io/MittagLeffleR/reference/index.html](https://strakaps.github.io/MittagLeffleR/reference/index.html)
 
 Examples
 --------
@@ -48,7 +59,7 @@ Fit the distribution:
 ``` r
 logMomentEstimator(y, 0.95)
 #>        nu     delta      nuLo      nuHi   deltaLo   deltaHi 
-#> 0.8984640 2.0025217 0.8981167 0.8988114 2.0005640 2.0044794
+#> 0.9026778 1.9998606 0.9023307 0.9030249 1.9979209 2.0018004
 ```
 
 Read off
@@ -79,10 +90,11 @@ plot(x,p, type='l', main = "Fractional diffusion with drift at t=1")
 
 ![](README-CTRW-limit-1.png)
 
-### Vignettes
+Vignettes
+---------
 
-To display the vignettes, do `help(package="MittagLeffleR")` and click on the link "User guides, package vignettes and other documentation.""
+See the page [strakaps.github.io/MittagLeffleR/articles/](https://strakaps.github.io/MittagLeffleR/articles/) for vignettes on
 
--   **MLdist.Rmd:** shows plots with the basic properties of the two distributions.
--   **probsNquantiles.Rmd:** details about how probability densities, quantiles and random variables are calculated using the Mittag-Leffler function and the package `stabledist`
--   **parametrisation.Rmd:** details about how the parameters for the stable distribution were chosen.
+-   Plots of the Mittag-Leffler distributions
+-   Details of Mittag-Leffler random variate generation
+-   Probabilities and Quantiles
