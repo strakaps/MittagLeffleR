@@ -95,11 +95,26 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<div id="stable-release-on-cran" class="section level3">
+<h3 class="hasAnchor">
+<a href="#stable-release-on-cran" class="anchor"></a>Stable release on CRAN</h3>
 <p>You can install MittagLeffleR from CRAN via</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"MittagLeffleR"</span>)</code></pre></div>
-<p>or from GitHub via</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"MittagLeffleR"</span>)
+<span class="kw">library</span>(MittagLeffleR)</code></pre></div>
+</div>
+<div id="development-version-on-github" class="section level3">
+<h3 class="hasAnchor">
+<a href="#development-version-on-github" class="anchor"></a>Development version on Github</h3>
+<p>Install the <code>devtools</code> package first, then</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"strakaps/MittagLeffler"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"strakaps/MittagLeffler"</span>)
+<span class="kw">library</span>(MittagLeffleR)</code></pre></div>
+</div>
+</div>
+<div id="usage" class="section level2">
+<h2 class="hasAnchor">
+<a href="#usage" class="anchor"></a>Usage</h2>
+<p>See the reference manual at <a href="https://strakaps.github.io/MittagLeffleR/reference/index.html">strakaps.github.io/MittagLeffleR/reference/index.html</a></p>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
@@ -113,7 +128,7 @@ y =<span class="st"> </span><span class="kw"><a href="reference/MittagLeffleR.ht
 <p>Fit the distribution:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/logMomentEstimator.html">logMomentEstimator</a></span>(y, <span class="fl">0.95</span>)
 <span class="co">#&gt;        nu     delta      nuLo      nuHi   deltaLo   deltaHi </span>
-<span class="co">#&gt; 0.9102694 2.0339738 0.9099229 0.9106159 2.0320288 2.0359188</span></code></pre></div>
+<span class="co">#&gt; 0.8931201 2.0059480 0.8927724 0.8934677 2.0039673 2.0079287</span></code></pre></div>
 <p>Read off</p>
 <ul>
 <li>the shape parameter <span class="math inline">\(0 &lt; \nu &lt; 1\)</span>,</li>
@@ -138,20 +153,16 @@ p &lt;-<span class="st"> </span>N <span class="op">%*%</span><span class="st"> <
 <span class="kw">plot</span>(x,p, <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">main =</span> <span class="st">"Fractional diffusion with drift at t=1"</span>)</code></pre></div>
 <p><img src="README-CTRW-limit-1.png" width="672"></p>
 </div>
-<div id="vignettes" class="section level3">
-<h3 class="hasAnchor">
-<a href="#vignettes" class="anchor"></a>Vignettes</h3>
-<p>To display the vignettes, do <code>help(package="MittagLeffleR")</code> and click on the link “User guides, package vignettes and other documentation.”"</p>
-<ul>
-<li>
-<strong>MLdist.Rmd:</strong> shows plots with the basic properties of the two distributions.</li>
-<li>
-<strong>probsNquantiles.Rmd:</strong> details about how probability densities, quantiles and random variables are calculated using the Mittag-Leffler function and the package <code>stabledist</code>
-</li>
-<li>
-<strong>parametrisation.Rmd:</strong> details about how the parameters for the stable distribution were chosen.</li>
-</ul>
 </div>
+<div id="vignettes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#vignettes" class="anchor"></a>Vignettes</h2>
+<p>See the page <a href="https://strakaps.github.io/MittagLeffleR/articles/">strakaps.github.io/MittagLeffleR/articles/</a> for vignettes on</p>
+<ul>
+<li>Plots of the Mittag-Leffler distributions</li>
+<li>Details of Mittag-Leffler random variate generation</li>
+<li>Probabilities and Quantiles</li>
+</ul>
 </div>
 </div>
 </div>

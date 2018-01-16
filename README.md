@@ -59,7 +59,7 @@ Fit the distribution:
 ``` r
 logMomentEstimator(y, 0.95)
 #>        nu     delta      nuLo      nuHi   deltaLo   deltaHi 
-#> 0.9026778 1.9998606 0.9023307 0.9030249 1.9979209 2.0018004
+#> 0.9049200 1.9787181 0.9045731 0.9052669 1.9768069 1.9806293
 ```
 
 Read off
