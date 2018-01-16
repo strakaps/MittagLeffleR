@@ -3,9 +3,9 @@
 MittagLeffleR
 =============
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR) [![Downloads](http://cranlogs.r-pkg.org/badges/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR) [![DL\_Total](http://cranlogs.r-pkg.org/badges/grand-total/MittagLeffleR?color=blue)](https://cran.r-project.org/package=MittagLeffleR)
+[![Travis-CI Build Status](https://api.travis-ci.org/strakaps/MittagLeffleR.svg?branch=master)](https://travis-ci.org/strakaps/MittagLeffleR) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR) [![Downloads](http://cranlogs.r-pkg.org/badges/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR) [![DL\_Total](http://cranlogs.r-pkg.org/badges/grand-total/MittagLeffleR?color=blue)](https://cran.r-project.org/package=MittagLeffleR)
 
-The MittagLeffleR `R` package
+The MittagLeffleR R package
 
 -   calculates probability densities, probabilities and quantiles
 -   simulates random variables from both types Mittag-Leffler distributions
@@ -18,7 +18,13 @@ The second type Mittag-Leffler distribution is light-tailed, and "inverse" to th
 Installation
 ------------
 
-You can install MittagLeffleR from GitHub with:
+You can install MittagLeffleR from CRAN via
+
+``` r
+install.packages("MittagLeffleR")
+```
+
+or from GitHub via
 
 ``` r
 # install.packages("devtools")
@@ -42,7 +48,7 @@ Fit the distribution:
 ``` r
 logMomentEstimator(y, 0.95)
 #>        nu     delta      nuLo      nuHi   deltaLo   deltaHi 
-#> 0.9031304 1.9668521 0.9027833 0.9034774 1.9649460 1.9687582
+#> 0.8984640 2.0025217 0.8981167 0.8988114 2.0005640 2.0044794
 ```
 
 Read off
@@ -75,7 +81,7 @@ plot(x,p, type='l', main = "Fractional diffusion with drift at t=1")
 
 ### Vignettes
 
-To display the vignettes, do `help(package="MittagLeffleR")` and click on the vignettes link.
+To display the vignettes, do `help(package="MittagLeffleR")` and click on the link "User guides, package vignettes and other documentation.""
 
 -   **MLdist.Rmd:** shows plots with the basic properties of the two distributions.
 -   **probsNquantiles.Rmd:** details about how probability densities, quantiles and random variables are calculated using the Mittag-Leffler function and the package `stabledist`

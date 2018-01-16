@@ -8,17 +8,19 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "README-",
+  cache = FALSE
 )
 ```
 
 # MittagLeffleR
 
+[![Travis-CI Build Status](https://api.travis-ci.org/strakaps/MittagLeffleR.svg?branch=master)](https://travis-ci.org/strakaps/MittagLeffleR)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR)
 [![Downloads](http://cranlogs.r-pkg.org/badges/MittagLeffleR)](https://cran.r-project.org/package=MittagLeffleR)
 [![DL_Total](http://cranlogs.r-pkg.org/badges/grand-total/MittagLeffleR?color=blue)](https://cran.r-project.org/package=MittagLeffleR)
 
-The MittagLeffleR `R` package 
+The MittagLeffleR R package 
 
 * calculates probability densities, probabilities and quantiles
 * simulates random variables from both types Mittag-Leffler distributions
@@ -37,7 +39,13 @@ processes.
 
 ## Installation
 
-You can install MittagLeffleR from GitHub with:
+You can install MittagLeffleR from CRAN via 
+
+```{r CRAN-installation, eval = FALSE}
+install.packages("MittagLeffleR")
+```
+
+or from GitHub via
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
@@ -95,7 +103,8 @@ plot(x,p, type='l', main = "Fractional diffusion with drift at t=1")
 ### Vignettes
 
 To display the vignettes, do `help(package="MittagLeffleR")` and 
-click on the vignettes link. 
+click on the link "User guides, package vignettes and other 
+documentation."" 
 
 - **MLdist.Rmd:** shows plots with the basic properties of the two
               distributions.
