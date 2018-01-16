@@ -104,7 +104,7 @@ plot(x,p, type='l', main = "Fractional diffusion with drift at t=1")
 
 To display the vignettes, do `help(package="MittagLeffleR")` and 
 click on the link "User guides, package vignettes and other 
-documentation."" 
+documentation." 
 
 - **MLdist.Rmd:** shows plots with the basic properties of the two
               distributions.
