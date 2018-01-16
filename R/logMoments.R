@@ -22,8 +22,10 @@
 #' @examples
 #' logMomentEstimator(rml(n = 100000, scale = 0.03, tail = 0.99), alpha=0.95)
 #' @return 
-#' A named vector with entries (nu     delta      nuLo      nuHi   deltaLo   
-#' deltaHi)
+#' A named vector with entries (nu, delta, nuLo, nuHi, deltaLo, deltaHi)
+#' where nu is the tail parameter and delta the scale parameter of the 
+#' Mittag-Leffler distribution, with confidence intervals 
+#' (nuLo, nuHi) resp. (deltaLo, deltaHi). 
 #' @references 
 #' Cahoy, D. O., Uchaikin, V. V., & Woyczynski Wojbor, W. A. (2010).  
 #' Parameter estimation for fractional Poisson processes.  

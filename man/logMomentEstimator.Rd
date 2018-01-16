@@ -12,8 +12,10 @@ logMomentEstimator(x, alpha = 0.05)
 \item{alpha}{Confidence intervals are calculated at level 1 - alpha.}
 }
 \value{
-A named vector with entries (nu     delta      nuLo      nuHi   deltaLo   
-deltaHi)
+A named vector with entries (nu, delta, nuLo, nuHi, deltaLo, deltaHi)
+where nu is the tail parameter and delta the scale parameter of the 
+Mittag-Leffler distribution, with confidence intervals 
+(nuLo, nuHi) resp. (deltaLo, deltaHi).
 }
 \description{
 Tail and scale parameter of the Mittag-Leffler distribution are estimated
