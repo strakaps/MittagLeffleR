@@ -78,7 +78,7 @@ Laplace transform $\exp(-s^\alpha)$ of $Z$, it is necessary that
 $C \Gamma(1-\alpha) = 1$. 
 But then $\sigma^\alpha = \cos(\pi \alpha/2)$, and we see that
 
-$$Y \sim S(\alpha, \beta, \sigma, a) 
+$$Z \sim S(\alpha, \beta, \sigma, a) 
 = S(\alpha, 1, \cos(\pi\alpha/2)^{1/\alpha}, 0)$$
 
 
