@@ -48,6 +48,9 @@ to be the number required.}
 Probability density, cumulative distribution
 function, quantile function and random variate generation for the
 two types of Mittag-Leffler distribution.
+The Laplace inversion algorithm by Garrappa is used for the pdf and 
+cdf (see 
+\url{https://www.mathworks.com/matlabcentral/fileexchange/48154-the-mittag-leffler-function}).
 }
 \details{
 The Mittag-Leffler function \code{\link{mlf}} defines two types of 

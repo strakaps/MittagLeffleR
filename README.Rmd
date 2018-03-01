@@ -22,9 +22,15 @@ knitr::opts_chunk$set(
 
 The MittagLeffleR R package 
 
-* calculates probability densities, probabilities and quantiles
+* calculates probability densities, probabilities and quantiles, based on a   
+  [Laplace-Inversion algorithm](https://au.mathworks.com/matlabcentral/fileexchange/48154-the-mittag-leffler-function) 
+  by [Roberto Garrappa](https://twitter.com/rgarrappa).
 * simulates random variables from both types Mittag-Leffler distributions
-* fits a Mittag-Leffler distribution to data. 
+* fits a Mittag-Leffler distribution to data, 
+  using the 
+  [log-moments estimator](http://doi.org/10.1080/03610918.2011.640094) 
+  by 
+  [Dexter Cahoy](https://www.uhd.edu/academics/sciences/mathematics-statistics/Pages/bio-cahoyd.aspx). 
 
 The first type Mittag-Leffler distribution is a heavy-tailed distribution, 
 and occurs mainly as a waiting time distribution in problems with

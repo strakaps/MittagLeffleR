@@ -13,7 +13,8 @@
 #' Log-Moments Estimator for the Mittag-Leffler Distribution.
 #' 
 #' Tail and scale parameter of the Mittag-Leffler distribution are estimated
-#' by matching with the first two empirical log-moments.
+#' by matching with the first two empirical log-moments
+#' (see Cahoy et al., \url{http://doi.org/10.1016/j.jspi.2010.04.016}).
 #' 
 #' @param x     A vector of non-negative data.
 #' @param alpha Confidence intervals are calculated at level 1 - alpha.

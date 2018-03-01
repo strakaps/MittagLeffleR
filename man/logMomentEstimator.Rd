@@ -19,7 +19,8 @@ Mittag-Leffler distribution, with confidence intervals
 }
 \description{
 Tail and scale parameter of the Mittag-Leffler distribution are estimated
-by matching with the first two empirical log-moments.
+by matching with the first two empirical log-moments
+(see Cahoy et al., \url{http://doi.org/10.1016/j.jspi.2010.04.016}).
 }
 \examples{
 logMomentEstimator(rml(n = 100000, scale = 0.03, tail = 0.99), alpha=0.95)
