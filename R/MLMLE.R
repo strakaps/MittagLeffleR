@@ -1,5 +1,12 @@
 #' Maximum Likelihood Estimation of the Mittag-Leffler distribution
 #'
+#' Optimizes the bivariate likelihood function via 
+#' \code{\link{optim}}. Uses \code{\link{logMomentEstimator}}
+#' for initial parameter values.
+#'
+#' @param data Vector of class "numeric"
+#' @param ... Additional parameters passed on to \code{\link{optim}}. 
+#' @return A named vector of class "numeric"
 #' @export
 mlml <- function(data) {
   # theta_orig: the parameter (tail, scale)

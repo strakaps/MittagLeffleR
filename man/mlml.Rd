@@ -4,8 +4,18 @@
 \alias{mlml}
 \title{Maximum Likelihood Estimation of the Mittag-Leffler distribution}
 \usage{
-mlml(data)
+mlml(data, ...)
+}
+\arguments{
+\item{data}{Vector of class "numeric"}
+
+\item{...}{Additional parameters passed on to \code{\link{optim}}.}
+}
+\value{
+A named vector of class "numeric"
 }
 \description{
-Maximum Likelihood Estimation of the Mittag-Leffler distribution
+Optimizes the bivariate likelihood function via 
+\code{\link{optim}}. Uses \code{\link{logMomentEstimator}}
+for initial parameter values.
 }
