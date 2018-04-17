@@ -3,7 +3,7 @@
 export(dml)
 export(logMomentEstimator)
 export(mlf)
-export(mlml)
+export(mlmle)
 export(pml)
 export(qml)
 export(rml)
