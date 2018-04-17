@@ -8,7 +8,7 @@
 #' @param ... Additional parameters passed on to \code{\link{optim}}. 
 #' @return A named vector of class "numeric"
 #' @export
-mlml <- function(data) {
+mlml <- function(data, ...) {
   # theta_orig: the parameter (tail, scale)
   # theta: a transformed parameter so that optimisation is unconstrained
   theta_orig <- function(theta)
@@ -25,8 +25,10 @@ mlml <- function(data) {
     theta <- theta_orig(theta)
     - sum(dml(data, theta[1], theta[2], log = TRUE))
   }
-  ml_theta <- stats::optim(theta_init, fn = log_l)$par
+  opt_out <- stats::optim(theta_init, fn = log_l, ...)
+  ml_theta <- opt_out$par
   tail <- 1 / (1 + exp(-ml_theta[1]))
   scale <- exp(ml_theta[2])
-  c(tail, scale)
+  opt_out$par <- c(tail, scale)
+  opt_out
 }
