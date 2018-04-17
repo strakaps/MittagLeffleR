@@ -19,7 +19,7 @@ mlml <- function(data) {
     - sum(dml(data, theta[1], theta[2], log = TRUE))
   }
   ml_theta <- stats::optim(theta_init, fn = log_l)$par
-  ml_a <- 1 / (1 + exp(-ml_theta[1]))
-  ml_d <- exp(ml_theta[2])
-  c(tail = ml_a, scale = ml_d)
+  tail <- 1 / (1 + exp(-ml_theta[1]))
+  scale <- exp(ml_theta[2])
+  c(tail, scale)
 }

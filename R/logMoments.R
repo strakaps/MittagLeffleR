@@ -56,7 +56,7 @@ logMomentEstimator = function (x, alpha=0.05) {
   l.delta= delta -zcv*se.delta
   u.delta =  delta + zcv*se.delta
   
-  return(c(nu = nu, delta = delta, nuLo = l.nu, nuHi = u.nu, 
-           deltaLo = l.delta, deltaHi = u.delta))      
+  return(c(tail = nu, scale = delta, tailLo = l.nu, tailHi = u.nu, 
+           scaleLo = l.delta, scaleHi = u.delta))      
 }
 
