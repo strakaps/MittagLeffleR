@@ -5,7 +5,7 @@
 #' for initial parameter values.
 #'
 #' @param data Vector of class "numeric"
-#' @param ... Additional parameters passed on to \code{\link{optim}}. 
+#' @param ... Additional parameters passed on to \code{\link{optim}}.
 #' @return The output of \code{\link{optim}}.
 #' @examples
 #' library(magrittr)
@@ -23,13 +23,28 @@ mlmle <- function(data, ...) {
   theta_orig_init <- logMomentEstimator(data)[1:2]
   theta_orig_init[1] <- min(theta_orig_init[1], 0.99)
   theta_init <- theta(theta_orig_init)
-
+  
   # run optimization in unconstrained parameters
   log_l <- function(theta) {
     theta <- theta_orig(theta)
     - sum(dml(data, theta[1], theta[2], log = TRUE))
   }
   opt_out <- stats::optim(theta_init, fn = log_l, ...)
-  opt_out$par <- theta_orig(opt_out$par)
-  opt_out
+  alt_loglik  <- -opt_out$value
+  null_loglik <-
+    -optimise(
+      f = function(rate)
+        - sum(dexp(data, rate, log = TRUE)),
+      interval = c(0, 1000)
+    )$objective
+  p_value <-
+    pchisq(2 * (alt_loglik - null_loglik),
+           df = 1,
+           lower.tail = FALSE)
+  list(
+    par = theta_orig(opt_out$par),
+    loglik = alt_loglik,
+    null_loglik = null_loglik,
+    p_value = p_value
+  )
 }
