@@ -178,7 +178,7 @@ qml2 <- function(p, tail){
 
 #' @rdname MittagLeffleR
 #' @examples
-#' rml(1000, 0.7, 1)
+#' rml(10, 0.7, 1)
 #'
 
 #' @export

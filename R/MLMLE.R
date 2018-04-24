@@ -32,13 +32,13 @@ mlmle <- function(data, ...) {
   opt_out <- stats::optim(theta_init, fn = log_l, ...)
   alt_loglik  <- -opt_out$value
   null_loglik <-
-    -optimise(
+    -stats::optimise(
       f = function(rate)
-        - sum(dexp(data, rate, log = TRUE)),
+        - sum(stats::dexp(data, rate, log = TRUE)),
       interval = c(0, 1000)
     )$objective
   p_value <-
-    pchisq(2 * (alt_loglik - null_loglik),
+    stats::pchisq(2 * (alt_loglik - null_loglik),
            df = 1,
            lower.tail = FALSE)
   list(
