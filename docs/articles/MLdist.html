@@ -81,86 +81,86 @@
       <h1>Plots of the Mittag-Leffler distributions</h1>
                         <h4 class="author">Gurtek Gill, Peter Straka</h4>
             
-            <h4 class="date">2018-01-16</h4>
+            <h4 class="date">2018-04-24</h4>
           </div>
 
     
     
 <div class="contents">
 <p>Set parameters:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MittagLeffleR)
-tail &lt;-<span class="st"> </span><span class="fl">0.7</span>
-scale &lt;-<span class="st"> </span><span class="dv">2</span>
-n &lt;-<span class="st"> </span><span class="dv">1000</span>
-cutoff &lt;-<span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>scale</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(MittagLeffleR)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">tail &lt;-<span class="st"> </span><span class="fl">0.7</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">scale &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">n &lt;-<span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">cutoff &lt;-<span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>scale</a></code></pre></div>
 <div id="first-type-of-mittag-leffler-distribution" class="section level2">
 <h2 class="hasAnchor">
 <a href="#first-type-of-mittag-leffler-distribution" class="anchor"></a>First type of Mittag-Leffler distribution</h2>
 <p>Generate 1000 i.i.d. random variables, and plot their empirical CDF (black) against the population CDF (red). The curved dashed line represents the stretched exponential function, due to the asymptotic result</p>
 <p><span class="math display">\[f(x; \alpha, \tau) \sim \exp(-(x/\tau)^\alpha), \quad x \downarrow 0.\]</span></p>
 <p>The straight dashed line in the second plot represents the function <span class="math inline">\(x^{-\alpha}\)</span>, showing asymptotic equivalence to a power-law for large values.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">r &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">rml</a></span>(<span class="dt">n =</span> n, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale)
-edfun &lt;-<span class="st"> </span><span class="kw">ecdf</span>(r)
-x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,<span class="dv">10</span>,<span class="fl">0.01</span>)
-<span class="kw">plot</span>(x,<span class="kw">edfun</span>(x), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">main =</span> <span class="st">"CDF on linear scale"</span>, 
-     <span class="dt">ylab=</span><span class="st">"p"</span>, <span class="dt">xlab=</span><span class="st">"x"</span>)
-y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">pml</a></span>(<span class="dt">q =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale)
-<span class="kw">lines</span>(x,y,<span class="dt">col=</span><span class="dv">2</span>)
-z &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span><span class="kw">exp</span>(<span class="op">-</span>(x<span class="op">/</span>scale)<span class="op">^</span>tail)
-<span class="kw">lines</span>(x,z, <span class="dt">lty=</span><span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">r &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">rml</a></span>(<span class="dt">n =</span> n, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">edfun &lt;-<span class="st"> </span><span class="kw">ecdf</span>(r)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,<span class="dv">10</span>,<span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">plot</span>(x,<span class="kw">edfun</span>(x), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">main =</span> <span class="st">"CDF on linear scale"</span>, </a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">     <span class="dt">ylab=</span><span class="st">"p"</span>, <span class="dt">xlab=</span><span class="st">"x"</span>)</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">pml</a></span>(<span class="dt">q =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale)</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">lines</span>(x,y,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">z &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span><span class="kw">exp</span>(<span class="op">-</span>(x<span class="op">/</span>scale)<span class="op">^</span>tail)</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw">lines</span>(x,z, <span class="dt">lty=</span><span class="dv">2</span>)</a></code></pre></div>
 <p><img src="MLdist_files/figure-html/unnamed-chunk-1-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="fl">0.01</span>))
-y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span><span class="kw">edfun</span>(x)
-<span class="kw">plot</span>(x,y, <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">log=</span><span class="st">'xy'</span>, <span class="dt">main =</span> <span class="st">"Tail Function on log-scale"</span>, 
-     <span class="dt">xlab =</span> <span class="st">"x"</span>, <span class="dt">ylab =</span> <span class="st">"p"</span>)
-y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">pml</a></span>(<span class="dt">q =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)
-<span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)
-<span class="co"># power law for large values</span>
-z &lt;-<span class="st"> </span>x<span class="op">^</span>(<span class="op">-</span>tail)
-<span class="kw">lines</span>(x,z, <span class="dt">lty=</span><span class="dv">2</span>)
-<span class="co"># stretched exponential for small values</span>
-w &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>(x<span class="op">/</span>scale)<span class="op">^</span>tail)
-<span class="kw">lines</span>(x,w, <span class="dt">lty=</span><span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="fl">0.01</span>))</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span><span class="kw">edfun</span>(x)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">plot</span>(x,y, <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">log=</span><span class="st">'xy'</span>, <span class="dt">main =</span> <span class="st">"Tail Function on log-scale"</span>, </a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">     <span class="dt">xlab =</span> <span class="st">"x"</span>, <span class="dt">ylab =</span> <span class="st">"p"</span>)</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">pml</a></span>(<span class="dt">q =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co"># power law for large values</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">z &lt;-<span class="st"> </span>x<span class="op">^</span>(<span class="op">-</span>tail)</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="kw">lines</span>(x,z, <span class="dt">lty=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co"># stretched exponential for small values</span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">w &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>(x<span class="op">/</span>scale)<span class="op">^</span>tail)</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="kw">lines</span>(x,w, <span class="dt">lty=</span><span class="dv">2</span>)</a></code></pre></div>
 <p><img src="MLdist_files/figure-html/unnamed-chunk-1-2.png" width="672"></p>
 <p>A plot of the density:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cutoff &lt;-<span class="st"> </span><span class="dv">10</span>
-fac &lt;-<span class="st"> </span><span class="kw">sum</span>(r <span class="op">&lt;=</span><span class="st"> </span>cutoff) <span class="op">/</span><span class="st"> </span>n
-r &lt;-<span class="st"> </span>r[r <span class="op">&lt;=</span><span class="st"> </span>cutoff]
-<span class="kw">hist</span>(r, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">breaks =</span> <span class="dv">50</span>)
-x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,cutoff,<span class="fl">0.01</span>)
-y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">dml</a></span>(<span class="dt">x =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale) <span class="op">/</span><span class="st"> </span>fac
-<span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">cutoff &lt;-<span class="st"> </span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">fac &lt;-<span class="st"> </span><span class="kw">sum</span>(r <span class="op">&lt;=</span><span class="st"> </span>cutoff) <span class="op">/</span><span class="st"> </span>n</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">r &lt;-<span class="st"> </span>r[r <span class="op">&lt;=</span><span class="st"> </span>cutoff]</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">hist</span>(r, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">breaks =</span> <span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,cutoff,<span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">dml</a></span>(<span class="dt">x =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale) <span class="op">/</span><span class="st"> </span>fac</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
 <p><img src="MLdist_files/figure-html/unnamed-chunk-2-1.png" width="672"></p>
 </div>
 <div id="second-type-of-mittag-leffler-distribution" class="section level2">
 <h2 class="hasAnchor">
 <a href="#second-type-of-mittag-leffler-distribution" class="anchor"></a>Second type of Mittag-Leffler distribution</h2>
 <p>The second type of Mittag-Leffler distribution is light-tailed, and in fact has finite moments of all orders: it drops off faster than the exponential distribution (dashed line).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MittagLeffleR)
-n &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>
-tail &lt;-<span class="st"> </span><span class="fl">0.6</span>
-r &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">rml</a></span>(<span class="dt">n =</span> n, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)
-edfun &lt;-<span class="st"> </span><span class="kw">ecdf</span>(r)
-<span class="kw">plot</span>(edfun, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,cutoff))
-x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,cutoff,<span class="fl">0.01</span>)
-y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">pml</a></span>(<span class="dt">q =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)
-<span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(MittagLeffleR)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">n &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">tail &lt;-<span class="st"> </span><span class="fl">0.6</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">r &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">rml</a></span>(<span class="dt">n =</span> n, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">edfun &lt;-<span class="st"> </span><span class="kw">ecdf</span>(r)</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="kw">plot</span>(edfun, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,cutoff))</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,cutoff,<span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">pml</a></span>(<span class="dt">q =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
 <p><img src="MLdist_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">4</span>,<span class="fl">0.01</span>))
-y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span><span class="kw">edfun</span>(x)
-<span class="kw">plot</span>(x,y, <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">log=</span><span class="st">'xy'</span>, <span class="dt">main =</span> <span class="st">"Tail Function on log-scale"</span>, 
-     <span class="dt">xlab =</span> <span class="st">"x"</span>, <span class="dt">ylab =</span> <span class="st">"p"</span>)
-y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">pml</a></span>(<span class="dt">q =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)
-<span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)
-<span class="co"># exponential distribution</span>
-w &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>(x<span class="op">/</span>scale))
-<span class="kw">lines</span>(x,w, <span class="dt">lty=</span><span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">4</span>,<span class="fl">0.01</span>))</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span><span class="kw">edfun</span>(x)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">plot</span>(x,y, <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">log=</span><span class="st">'xy'</span>, <span class="dt">main =</span> <span class="st">"Tail Function on log-scale"</span>, </a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">     <span class="dt">xlab =</span> <span class="st">"x"</span>, <span class="dt">ylab =</span> <span class="st">"p"</span>)</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">pml</a></span>(<span class="dt">q =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co"># exponential distribution</span></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">w &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>(x<span class="op">/</span>scale))</a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="kw">lines</span>(x,w, <span class="dt">lty=</span><span class="dv">2</span>)</a></code></pre></div>
 <p><img src="MLdist_files/figure-html/unnamed-chunk-3-2.png" width="672"></p>
 <p>A plot of the density:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(r, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">breaks =</span> <span class="dv">20</span>)
-x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,cutoff,<span class="fl">0.01</span>)
-y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">dml</a></span>(<span class="dt">x =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)
-<span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">hist</span>(r, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">breaks =</span> <span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,cutoff,<span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">dml</a></span>(<span class="dt">x =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
 <p><img src="MLdist_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
 </div>
 </div>

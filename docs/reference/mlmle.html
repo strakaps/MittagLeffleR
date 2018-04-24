@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Log-Moments Estimator for the Mittag-Leffler Distribution. — logMomentEstimator • MittagLeffleR</title>
+<title>Maximum Likelihood Estimation of the Mittag-Leffler distribution — mlmle • MittagLeffleR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -101,52 +101,52 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Log-Moments Estimator for the Mittag-Leffler Distribution.</h1>
+    <h1>Maximum Likelihood Estimation of the Mittag-Leffler distribution</h1>
     </div>
 
     
-    <p>Tail and scale parameter of the Mittag-Leffler distribution are estimated
-by matching with the first two empirical log-moments
-(see Cahoy et al., <a href='http://doi.org/10.1016/j.jspi.2010.04.016'>http://doi.org/10.1016/j.jspi.2010.04.016</a>).</p>
+    <p>Optimizes the bivariate loglikelihood of the Mittag-Leffler distribution
+ via <code>optim</code>. Uses <code><a href='logMomentEstimator.html'>logMomentEstimator</a></code>
+for initial parameter values.</p>
     
 
-    <pre class="usage"><span class='fu'>logMomentEstimator</span>(<span class='no'>x</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)</pre>
+    <pre class="usage"><span class='fu'>mlmle</span>(<span class='no'>data</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>A vector of non-negative data.</p></td>
+      <th>data</th>
+      <td><p>Vector of class "numeric"</p></td>
     </tr>
     <tr>
-      <th>alpha</th>
-      <td><p>Confidence intervals are calculated at level 1 - alpha.</p></td>
+      <th>...</th>
+      <td><p>Additional parameters passed on to <code>optim</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A named vector with entries (nu, delta, nuLo, nuHi, deltaLo, deltaHi)
-where nu is the tail parameter and delta the scale parameter of the 
-Mittag-Leffler distribution, with confidence intervals 
-(nuLo, nuHi) resp. (deltaLo, deltaHi).</p>
-    
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p>Cahoy, D. O., Uchaikin, V. V., &amp; Woyczynski Wojbor, W. A. (2010).  
-Parameter estimation for fractional Poisson processes.  
-Journal of Statistical Planning and Inference, 140(11), 3106–3120. 
-<a href='http://doi.org/10.1016/j.jspi.2010.04.016'>http://doi.org/10.1016/j.jspi.2010.04.016</a></p>
-<p>Cahoy, D. O. (2013). 
-Estimation of Mittag-Leffler Parameters. 
-Communications in Statistics - Simulation and Computation, 42(2), 303–315. 
-<a href='http://doi.org/10.1080/03610918.2011.640094'>http://doi.org/10.1080/03610918.2011.640094</a></p>
+    <p>The output of <code>optim</code>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>logMomentEstimator</span>(<span class='fu'><a href='MittagLeffleR.html'>rml</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100000</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>0.03</span>, <span class='kw'>tail</span> <span class='kw'>=</span> <span class='fl'>0.99</span>), <span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.95</span>)</div><div class='output co'>#&gt;       tail      scale     tailLo     tailHi    scaleLo    scaleHi 
-#&gt; 0.98995292 0.03009798 0.98984794 0.99005790 0.03009017 0.03010578 </div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>magrittr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘magrittr’</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:testthat’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    equals, is_less_than, not</span></div><div class='input'><span class='fu'><a href='MittagLeffleR.html'>rml</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>tail</span> <span class='kw'>=</span> <span class='fl'>0.8</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>1000</span>) <span class='kw'>%&gt;%</span> <span class='fu'>mlmle</span>()</div><div class='output co'>#&gt; $par
+#&gt;        tail       scale 
+#&gt;   0.7841156 944.9654426 
+#&gt; 
+#&gt; $loglik
+#&gt; [1] -8298.901
+#&gt; 
+#&gt; $null_loglik
+#&gt; [1] -10432.73
+#&gt; 
+#&gt; $p_value
+#&gt; [1] 0
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -154,8 +154,6 @@ Communications in Statistics - Simulation and Computation, 42(2), 303–315.
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#references">References</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

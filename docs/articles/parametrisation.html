@@ -81,7 +81,7 @@
       <h1>Details of Mittag-Leffler random variate generation</h1>
                         <h4 class="author">Peter Straka</h4>
             
-            <h4 class="date">2018-01-16</h4>
+            <h4 class="date">2018-04-24</h4>
           </div>
 
     
@@ -100,17 +100,17 @@
 <h4 class="hasAnchor">
 <a href="#generating-x" class="anchor"></a>Generating <span class="math inline">\(X\)</span>
 </h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">5</span>
-x &lt;-<span class="st"> </span><span class="kw">rexp</span>(n)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">n &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw">rexp</span>(n)</a></code></pre></div>
 </div>
 <div id="generating-z" class="section level4">
 <h4 class="hasAnchor">
 <a href="#generating-z" class="anchor"></a>Generating <span class="math inline">\(Z\)</span>
 </h4>
 <p>To generate such random variates <span class="math inline">\(Z\)</span>, we use</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="fl">0.8</span>
-sigma &lt;-<span class="st"> </span>(<span class="kw">cos</span>(pi<span class="op">*</span>a<span class="op">/</span><span class="dv">2</span>))<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>a)
-z &lt;-<span class="st"> </span>stabledist<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stabledist/topics/dist-stable">rstable</a></span>(<span class="dt">n =</span> n, <span class="dt">alpha =</span> a, <span class="dt">beta =</span> <span class="dv">1</span>, <span class="dt">gamma =</span> sigma, <span class="dt">delta =</span> <span class="dv">0</span>, <span class="dt">pm =</span> <span class="dv">1</span>)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="fl">0.8</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">sigma &lt;-<span class="st"> </span>(<span class="kw">cos</span>(pi<span class="op">*</span>a<span class="op">/</span><span class="dv">2</span>))<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>a)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">z &lt;-<span class="st"> </span>stabledist<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stabledist/topics/dist-stable">rstable</a></span>(<span class="dt">n =</span> n, <span class="dt">alpha =</span> a, <span class="dt">beta =</span> <span class="dv">1</span>, <span class="dt">gamma =</span> sigma, <span class="dt">delta =</span> <span class="dv">0</span>, <span class="dt">pm =</span> <span class="dv">1</span>)</a></code></pre></div>
 <p>Below are the details of the calculation. We use the parametrization of the stable distribution by <span class="citation">Samorodnitsky and Taqqu (1994)</span> as it has become standard. For <span class="math inline">\(\alpha \in (0,1)\)</span> and <span class="math inline">\(\alpha \in (1,2)\)</span>,</p>
 <p><span class="math display">\[\mathbf E[\exp(it Z)] = \exp\left\lbrace -\sigma^\alpha |t|^\alpha
 \left[1 - i \beta {\rm sgn}t \tan \frac{\pi \alpha}{2}\right]
@@ -133,16 +133,16 @@ z &lt;-<span class="st"> </span>stabledist<span class="op">::</span><span class=
 = -C \Gamma(1-\alpha)(-it)^\alpha
 \end{align}\]</span>
 <p>Setting <span class="math inline">\(t = is\)</span> recovers the Laplace transform, and to match the Laplace transform <span class="math inline">\(\exp(-s^\alpha)\)</span> of <span class="math inline">\(Z\)</span>, it is necessary that <span class="math inline">\(C \Gamma(1-\alpha) = 1\)</span>. But then <span class="math inline">\(\sigma^\alpha = \cos(\pi \alpha/2)\)</span>, and we see that</p>
-<p><span class="math display">\[Y \sim S(\alpha, \beta, \sigma, a) 
+<p><span class="math display">\[Z \sim S(\alpha, \beta, \sigma, a) 
 = S(\alpha, 1, \cos(\pi\alpha/2)^{1/\alpha}, 0)\]</span></p>
 </div>
 <div id="generating-y" class="section level4">
 <h4 class="hasAnchor">
 <a href="#generating-y" class="anchor"></a>Generating <span class="math inline">\(Y\)</span>
 </h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y &lt;-<span class="st"> </span>x<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>a) <span class="op">*</span><span class="st"> </span>z
-y</code></pre></div>
-<pre><code>## [1]  0.002962973  7.252223033  1.345554598 30.914567928  0.101807889</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">y &lt;-<span class="st"> </span>x<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>a) <span class="op">*</span><span class="st"> </span>z</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">y</a></code></pre></div>
+<pre><code>## [1] 4.74418696 0.40077590 0.07890444 1.08097225 0.24910184</code></pre>
 </div>
 </div>
 </div>
@@ -151,7 +151,7 @@ y</code></pre></div>
 <a href="#references" class="anchor"></a>References</h1>
 <div id="refs" class="references">
 <div id="ref-Haubold2011a">
-<p>Haubold, H.J., A. M. Mathai, and R. K. Saxena. 2011. “Mittag-Leffler Functions and Their Applications.” <em>J. Appl. Math.</em> 2011: 1–51. doi:<a href="https://doi.org/10.1155/2011/298628">10.1155/2011/298628</a>.</p>
+<p>Haubold, H.J., A. M. Mathai, and R. K. Saxena. 2011. “Mittag-Leffler Functions and Their Applications.” <em>J. Appl. Math.</em> 2011:1–51. <a href="https://doi.org/10.1155/2011/298628" class="uri">https://doi.org/10.1155/2011/298628</a>.</p>
 </div>
 <div id="ref-thebook">
 <p>Meerschaert, Mark M, and Hans-Peter Scheffler. 2001. <em>Limit Distributions for Sums of Independent Random Vectors: Heavy Tails in Theory and Practice</em>. Book. First. New York: Wiley-Interscience.</p>
