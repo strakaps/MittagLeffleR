@@ -1,6 +1,6 @@
 Package: MittagLeffleR
 Type: Package
-Title: Mittag-Leffler family of distribution
+Title: Mittag-Leffler family of distributions
 Version: 0.3.0
 Author: Gurtek Gill [aut], Peter Straka [aut, cre]
 Maintainer: Peter Straka <p.straka@unsw.edu.au>
