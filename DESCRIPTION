@@ -1,7 +1,7 @@
 Package: MittagLeffleR
 Type: Package
-Title: The Mittag-Leffler Distribution
-Version: 0.2.0
+Title: Mittag-Leffler family of distribution
+Version: 0.3.0
 Author: Gurtek Gill [aut], Peter Straka [aut, cre]
 Maintainer: Peter Straka <p.straka@unsw.edu.au>
 Authors@R: c(
@@ -9,11 +9,10 @@ Authors@R: c(
             role = "aut"),
     person("Peter", "Straka", email = "p.straka@unsw.edu.au", 
             role = c("aut", "cre")))
-Description: Calculates Mittag-Leffler probabilities and the Mittag-Leffler
-  function, generates Mittag-Leffler random variables,
-  and fits the Mittag-Leffler distribution to data. Based on the algorithm
-  by Garrappa, R. (2015) <doi:10.1137/140971191>.
-URL: https://github.com/strakaps/MittagLeffleR
+Description: Implements the Mittag-Leffler function, distribution,
+  random variate generation, and estimation. Based on the Laplace-Inversion
+  algorithm by Garrappa, R. (2015) <doi:10.1137/140971191>.
+URL: https://strakaps.github.io/MittagLeffleR/
 BugReports: https://github.com/strakaps/MittagLeffleR/issues
 License: GPL (>= 2)
 Encoding: UTF-8
