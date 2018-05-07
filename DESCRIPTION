@@ -1,14 +1,17 @@
 Package: MittagLeffleR
 Type: Package
-Title: Mittag-Leffler family of distributions
+Title: Mittag-Leffler Family of Distributions
 Version: 0.3.0
 Author: Gurtek Gill [aut], Peter Straka [aut, cre]
 Maintainer: Peter Straka <p.straka@unsw.edu.au>
 Authors@R: c(
+    person("Peter", "Straka", email = "p.straka@unsw.edu.au", 
+            role = c("aut", "cre")),
     person("Gurtek", "Gill", email = "rickygill01@gmail.com", 
             role = "aut"),
-    person("Peter", "Straka", email = "p.straka@unsw.edu.au", 
-            role = c("aut", "cre")))
+    person("Roberto", "Garrappa", email = "roberto.garrappa@uniba.it", 
+            role = "ctb")
+            )
 Description: Implements the Mittag-Leffler function, distribution,
   random variate generation, and estimation. Based on the Laplace-Inversion
   algorithm by Garrappa, R. (2015) <doi:10.1137/140971191>.
