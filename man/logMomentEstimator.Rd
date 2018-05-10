@@ -23,7 +23,7 @@ by matching with the first two empirical log-moments
 (see Cahoy et al., \url{http://doi.org/10.1016/j.jspi.2010.04.016}).
 }
 \examples{
-logMomentEstimator(rml(n = 100000, scale = 0.03, tail = 0.99), alpha=0.95)
+logMomentEstimator(rml(n = 1000, scale = 0.03, tail = 0.84), alpha=0.95)
 }
 \references{
 Cahoy, D. O., Uchaikin, V. V., & Woyczynski Wojbor, W. A. (2010).  

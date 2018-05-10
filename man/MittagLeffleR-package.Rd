@@ -46,4 +46,9 @@ Authors:
   \item Gurtek Gill \email{rickygill01@gmail.com}
 }
 
+Other contributors:
+\itemize{
+  \item Roberto Garrappa \email{roberto.garrappa@uniba.it} [contributor]
+}
+
 }
