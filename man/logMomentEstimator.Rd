@@ -2,7 +2,7 @@
 % Please edit documentation in R/logMoments.R
 \name{logMomentEstimator}
 \alias{logMomentEstimator}
-\title{Log-Moments Estimator for the Mittag-Leffler Distribution.}
+\title{Log-Moments Estimator for the Mittag-Leffler Distribution (Type 1).}
 \usage{
 logMomentEstimator(x, alpha = 0.05)
 }

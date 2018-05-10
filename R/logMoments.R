@@ -10,7 +10,7 @@
 ########################
 
 
-#' Log-Moments Estimator for the Mittag-Leffler Distribution.
+#' Log-Moments Estimator for the Mittag-Leffler Distribution (Type 1).
 #' 
 #' Tail and scale parameter of the Mittag-Leffler distribution are estimated
 #' by matching with the first two empirical log-moments

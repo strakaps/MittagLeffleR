@@ -29,7 +29,7 @@ The MittagLeffleR R package
 * fits a Mittag-Leffler distribution to data, 
   using the 
   [log-moments estimator](http://doi.org/10.1080/03610918.2011.640094) 
-  by 
+  (for the first type of distribution) by 
   [Dexter Cahoy](https://www.uhd.edu/academics/sciences/mathematics-statistics/Pages/bio-cahoyd.aspx). 
 
 The first type Mittag-Leffler distribution is a heavy-tailed distribution, 

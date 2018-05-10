@@ -19,7 +19,8 @@ The MittagLeffleR R package
   - simulates random variables from both types Mittag-Leffler
     distributions
   - fits a Mittag-Leffler distribution to data, using the [log-moments
-    estimator](http://doi.org/10.1080/03610918.2011.640094) by [Dexter
+    estimator](http://doi.org/10.1080/03610918.2011.640094) (for the
+    first type of distribution) by [Dexter
     Cahoy](https://www.uhd.edu/academics/sciences/mathematics-statistics/Pages/bio-cahoyd.aspx).
 
 The first type Mittag-Leffler distribution is a heavy-tailed
@@ -72,8 +73,8 @@ Fit the distribution:
 
 ``` r
 logMomentEstimator(y, 0.95)
-#>        nu     delta      nuLo      nuHi   deltaLo   deltaHi 
-#> 0.8979629 2.0015598 0.8976156 0.8983103 1.9996012 2.0035184
+#>      tail     scale    tailLo    tailHi   scaleLo   scaleHi 
+#> 0.8895499 1.9746082 0.8892021 0.8898977 1.9726454 1.9765709
 ```
 
 Read off
