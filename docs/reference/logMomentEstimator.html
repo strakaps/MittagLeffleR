@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Log-Moments Estimator for the Mittag-Leffler Distribution. — logMomentEstimator • MittagLeffleR</title>
+<title>Log-Moments Estimator for the Mittag-Leffler Distribution (Type 1). — logMomentEstimator • MittagLeffleR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,24 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Log-Moments Estimator for the Mittag-Leffler Distribution (Type 1). — logMomentEstimator" />
+
+<meta property="og:description" content="Tail and scale parameter of the Mittag-Leffler distribution are estimated
+by matching with the first two empirical log-moments
+(see Cahoy et al., http://doi.org/10.1016/j.jspi.2010.04.016)." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,8 +58,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">MittagLeffleR</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">MittagLeffleR</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -79,13 +94,14 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -93,21 +109,25 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Log-Moments Estimator for the Mittag-Leffler Distribution.</h1>
+    <h1>Log-Moments Estimator for the Mittag-Leffler Distribution (Type 1).</h1>
+    
+    <div class="hidden name"><code>logMomentEstimator.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Tail and scale parameter of the Mittag-Leffler distribution are estimated
 by matching with the first two empirical log-moments
 (see Cahoy et al., <a href='http://doi.org/10.1016/j.jspi.2010.04.016'>http://doi.org/10.1016/j.jspi.2010.04.016</a>).</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>logMomentEstimator</span>(<span class='no'>x</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -140,8 +160,8 @@ Communications in Statistics - Simulation and Computation, 42(2), 303–315.
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>logMomentEstimator</span>(<span class='fu'><a href='MittagLeffleR.html'>rml</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100000</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>0.03</span>, <span class='kw'>tail</span> <span class='kw'>=</span> <span class='fl'>0.99</span>), <span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.95</span>)</div><div class='output co'>#&gt;       tail      scale     tailLo     tailHi    scaleLo    scaleHi 
-#&gt; 0.98995292 0.03009798 0.98984794 0.99005790 0.03009017 0.03010578 </div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>logMomentEstimator</span>(<span class='fu'><a href='MittagLeffleR.html'>rml</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>0.03</span>, <span class='kw'>tail</span> <span class='kw'>=</span> <span class='fl'>0.84</span>), <span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.95</span>)</div><div class='output co'>#&gt;       tail      scale     tailLo     tailHi    scaleLo    scaleHi 
+#&gt; 0.85682030 0.03128040 0.85571990 0.85792069 0.03117594 0.03138487 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -160,7 +180,7 @@ Communications in Statistics - Simulation and Computation, 42(2), 303–315.
 
       <footer>
       <div class="copyright">
-  <p>Developed by Gurtek Gill, Peter Straka.</p>
+  <p>Developed by Peter Straka, Gurtek Gill.</p>
 </div>
 
 <div class="pkgdown">
@@ -170,5 +190,8 @@ Communications in Statistics - Simulation and Computation, 42(2), 303–315.
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

@@ -8,14 +8,17 @@
 <title>Plots of the Mittag-Leffler distributions • MittagLeffleR</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><meta property="og:title" content="Plots of the Mittag-Leffler distributions">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -24,8 +27,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">MittagLeffleR</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">MittagLeffleR</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -56,7 +63,7 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
@@ -69,17 +76,20 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Plots of the Mittag-Leffler distributions</h1>
                         <h4 class="author">Gurtek Gill, Peter Straka</h4>
             
-            <h4 class="date">2018-04-24</h4>
-          </div>
+            <h4 class="date">2018-05-10</h4>
+      
+      
+      <div class="hidden name"><code>MLdist.Rmd</code></div>
+
+    </div>
 
     
     
-<div class="contents">
 <p>Set parameters:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(MittagLeffleR)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">tail &lt;-<span class="st"> </span><span class="fl">0.7</span></a>
@@ -101,7 +111,7 @@
 <a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">lines</span>(x,y,<span class="dt">col=</span><span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb2-8" data-line-number="8">z &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span><span class="kw">exp</span>(<span class="op">-</span>(x<span class="op">/</span>scale)<span class="op">^</span>tail)</a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw">lines</span>(x,z, <span class="dt">lty=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="MLdist_files/figure-html/unnamed-chunk-1-1.png" width="672"></p>
+<p><img src="MLdist_files/figure-html/unnamed-chunk-1-1.png" width="700"></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="fl">0.01</span>))</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span><span class="kw">edfun</span>(x)</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">plot</span>(x,y, <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">log=</span><span class="st">'xy'</span>, <span class="dt">main =</span> <span class="st">"Tail Function on log-scale"</span>, </a>
@@ -114,7 +124,7 @@
 <a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co"># stretched exponential for small values</span></a>
 <a class="sourceLine" id="cb3-11" data-line-number="11">w &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>(x<span class="op">/</span>scale)<span class="op">^</span>tail)</a>
 <a class="sourceLine" id="cb3-12" data-line-number="12"><span class="kw">lines</span>(x,w, <span class="dt">lty=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="MLdist_files/figure-html/unnamed-chunk-1-2.png" width="672"></p>
+<p><img src="MLdist_files/figure-html/unnamed-chunk-1-2.png" width="700"></p>
 <p>A plot of the density:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">cutoff &lt;-<span class="st"> </span><span class="dv">10</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">fac &lt;-<span class="st"> </span><span class="kw">sum</span>(r <span class="op">&lt;=</span><span class="st"> </span>cutoff) <span class="op">/</span><span class="st"> </span>n</a>
@@ -123,7 +133,7 @@
 <a class="sourceLine" id="cb4-5" data-line-number="5">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,cutoff,<span class="fl">0.01</span>)</a>
 <a class="sourceLine" id="cb4-6" data-line-number="6">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">dml</a></span>(<span class="dt">x =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale) <span class="op">/</span><span class="st"> </span>fac</a>
 <a class="sourceLine" id="cb4-7" data-line-number="7"><span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="MLdist_files/figure-html/unnamed-chunk-2-1.png" width="672"></p>
+<p><img src="MLdist_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
 </div>
 <div id="second-type-of-mittag-leffler-distribution" class="section level2">
 <h2 class="hasAnchor">
@@ -138,7 +148,7 @@
 <a class="sourceLine" id="cb5-7" data-line-number="7">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,cutoff,<span class="fl">0.01</span>)</a>
 <a class="sourceLine" id="cb5-8" data-line-number="8">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">pml</a></span>(<span class="dt">q =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb5-9" data-line-number="9"><span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="MLdist_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
+<p><img src="MLdist_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">4</span>,<span class="fl">0.01</span>))</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span><span class="kw">edfun</span>(x)</a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">plot</span>(x,y, <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">log=</span><span class="st">'xy'</span>, <span class="dt">main =</span> <span class="st">"Tail Function on log-scale"</span>, </a>
@@ -148,14 +158,13 @@
 <a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co"># exponential distribution</span></a>
 <a class="sourceLine" id="cb6-8" data-line-number="8">w &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>(x<span class="op">/</span>scale))</a>
 <a class="sourceLine" id="cb6-9" data-line-number="9"><span class="kw">lines</span>(x,w, <span class="dt">lty=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="MLdist_files/figure-html/unnamed-chunk-3-2.png" width="672"></p>
+<p><img src="MLdist_files/figure-html/unnamed-chunk-3-2.png" width="700"></p>
 <p>A plot of the density:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">hist</span>(r, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">breaks =</span> <span class="dv">20</span>)</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,cutoff,<span class="fl">0.01</span>)</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3">y &lt;-<span class="st"> </span><span class="kw"><a href="../reference/MittagLeffleR.html">dml</a></span>(<span class="dt">x =</span> x, <span class="dt">tail =</span> tail, <span class="dt">scale=</span>scale, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">lines</span>(x,y, <span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="MLdist_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
-</div>
+<p><img src="MLdist_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 </div>
   </div>
 
@@ -174,7 +183,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Gurtek Gill, Peter Straka.</p>
+  <p>Developed by Peter Straka, Gurtek Gill.</p>
 </div>
 
 <div class="pkgdown">
@@ -183,6 +192,8 @@
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

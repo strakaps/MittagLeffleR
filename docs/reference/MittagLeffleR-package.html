@@ -18,13 +18,28 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Mittag-Leffler family of distributions — MittagLeffleR-package" />
+
+<meta property="og:description" content="A generalization of the exponential distribution. Contains
+the Mittag-Leffler function mlf
+distributions (dml, pml, qml) 
+and random variate generation (rml)
+a log-moment estimator (logMomentEstimator), 
+and maximum likelihood estimator (mlmle)
+" />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,8 +62,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">MittagLeffleR</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">MittagLeffleR</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -79,13 +98,14 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -93,12 +113,15 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Mittag-Leffler family of distributions</h1>
+    
+    <div class="hidden name"><code>MittagLeffleR-package.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>A generalization of the exponential distribution. Contains</p><ul>
 <li><p>the Mittag-Leffler function <code><a href='mlf.html'>mlf</a></code></p></li>
@@ -108,6 +131,7 @@ and random variate generation (<code><a href='MittagLeffleR.html'>rml</a></code>
 and maximum likelihood estimator (<code><a href='mlmle.html'>mlmle</a></code>)</p></li>
 </ul>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -121,10 +145,10 @@ and maximum likelihood estimator (<code><a href='mlmle.html'>mlmle</a></code>)</
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Useful links:</p><ul>
+    <div class='dont-index'><p>Useful links:</p><ul>
 <li><p><a href='https://strakaps.github.io/MittagLeffleR/'>https://strakaps.github.io/MittagLeffleR/</a></p></li>
 <li><p>Report bugs at <a href='https://github.com/strakaps/MittagLeffleR/issues'>https://github.com/strakaps/MittagLeffleR/issues</a></p></li>
-</ul>
+</ul></div>
     
 
   </div>
@@ -146,13 +170,18 @@ Authors:
 <li><p>Gurtek Gill <a href='mailto:rickygill01@gmail.com'>rickygill01@gmail.com</a></p></li>
 </ul>
 
+Other contributors:
+<ul>
+<li><p>Roberto Garrappa <a href='mailto:roberto.garrappa@uniba.it'>roberto.garrappa@uniba.it</a> [contributor]</p></li>
+</ul>
+
 
   </div>
 </div>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Gurtek Gill, Peter Straka.</p>
+  <p>Developed by Peter Straka, Gurtek Gill.</p>
 </div>
 
 <div class="pkgdown">
@@ -162,5 +191,8 @@ Authors:
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

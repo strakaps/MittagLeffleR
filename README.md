@@ -55,8 +55,8 @@ library(MittagLeffleR)
 
 ## Usage
 
-See the reference manual at
-[strakaps.github.io/MittagLeffleR/reference/index.html](https://strakaps.github.io/MittagLeffleR/reference/index.html)
+See [reference
+manual](https://strakaps.github.io/MittagLeffleR/reference/index.html).
 
 ## Examples
 
@@ -74,7 +74,7 @@ Fit the distribution:
 ``` r
 logMomentEstimator(y, 0.95)
 #>      tail     scale    tailLo    tailHi   scaleLo   scaleHi 
-#> 0.8895499 1.9746082 0.8892021 0.8898977 1.9726454 1.9765709
+#> 0.9022684 2.0672138 0.9019213 0.9026155 2.0652072 2.0692204
 ```
 
 Read off

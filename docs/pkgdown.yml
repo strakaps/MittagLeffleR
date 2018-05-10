@@ -1,0 +1,8 @@
+pandoc: '2.1'
+pkgdown: 1.0.0
+pkgdown_sha: ~
+articles:
+  MLdist: MLdist.html
+  parametrisation: parametrisation.html
+  probsNquantiles: probsNquantiles.html
+

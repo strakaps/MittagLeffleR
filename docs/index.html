@@ -5,17 +5,22 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mittag-Leffler family of distributions • MittagLeffleR</title>
+<title>Mittag-Leffler Family of Distributions • MittagLeffleR</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><meta property="og:title" content="Mittag-Leffler Family of Distributions">
+<meta property="og:description" content="Implements the Mittag-Leffler function, distribution,
+  random variate generation, and estimation. Based on the Laplace-Inversion
+  algorithm by Garrappa, R. (2015) &lt;doi:10.1137/140971191&gt;.">
+<meta name="twitter:card" content="summary">
+<!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -24,8 +29,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">MittagLeffleR</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="index.html">MittagLeffleR</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -56,7 +65,7 @@
   </ul>
 </li>
 <li>
-  <a href="news/index.html">News</a>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
@@ -69,12 +78,11 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     
 
     
     
-<div class="contents">
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="mittagleffler" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
@@ -84,7 +92,7 @@
 <ul>
 <li>calculates probability densities, probabilities and quantiles, based on a<br><a href="https://au.mathworks.com/matlabcentral/fileexchange/48154-the-mittag-leffler-function">Laplace-Inversion algorithm</a> by <a href="https://twitter.com/rgarrappa">Roberto Garrappa</a>.</li>
 <li>simulates random variables from both types Mittag-Leffler distributions</li>
-<li>fits a Mittag-Leffler distribution to data, using the <a href="http://doi.org/10.1080/03610918.2011.640094">log-moments estimator</a> by <a href="https://www.uhd.edu/academics/sciences/mathematics-statistics/Pages/bio-cahoyd.aspx">Dexter Cahoy</a>.</li>
+<li>fits a Mittag-Leffler distribution to data, using the <a href="http://doi.org/10.1080/03610918.2011.640094">log-moments estimator</a> (for the first type of distribution) by <a href="https://www.uhd.edu/academics/sciences/mathematics-statistics/Pages/bio-cahoyd.aspx">Dexter Cahoy</a>.</li>
 </ul>
 <p>The first type Mittag-Leffler distribution is a heavy-tailed distribution, and occurs mainly as a waiting time distribution in problems with “fractional” time scales, e.g. times between earthquakes.</p>
 <p>The second type Mittag-Leffler distribution is light-tailed, and “inverse” to the sum-stable distributions. It typically models the number of events in fractional systems and is used for time-changes of stochastic processes, e.g. anomalous diffusion processes.</p>
@@ -110,7 +118,7 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>See the reference manual at <a href="https://strakaps.github.io/MittagLeffleR/reference/index.html">strakaps.github.io/MittagLeffleR/reference/index.html</a></p>
+<p>See <a href="https://strakaps.github.io/MittagLeffleR/reference/index.html">reference manual</a>.</p>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
@@ -124,7 +132,7 @@
 <p>Fit the distribution:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/logMomentEstimator.html">logMomentEstimator</a></span>(y, <span class="fl">0.95</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;      tail     scale    tailLo    tailHi   scaleLo   scaleHi </span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; 0.9053411 2.0091197 0.9049942 0.9056880 2.0071807 2.0110588</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; 0.8990526 2.0462438 0.8987053 0.8993999 2.0442456 2.0482421</span></a></code></pre></div>
 <p>Read off</p>
 <ul>
 <li>the shape parameter <span class="math inline">\(0 &lt; \nu &lt; 1\)</span>,</li>
@@ -147,7 +155,7 @@
 <a class="sourceLine" id="cb5-7" data-line-number="7">N &lt;-<span class="st"> </span><span class="kw">outer</span>(x,u,<span class="cf">function</span>(x,u){<span class="kw">dnorm</span>(<span class="dt">x =</span> x, <span class="dt">mean =</span> u, <span class="dt">sd =</span> <span class="kw">sqrt</span>(u))})</a>
 <a class="sourceLine" id="cb5-8" data-line-number="8">p &lt;-<span class="st"> </span>N <span class="op">%*%</span><span class="st"> </span>h <span class="op">*</span><span class="st"> </span>dx</a>
 <a class="sourceLine" id="cb5-9" data-line-number="9"><span class="kw">plot</span>(x,p, <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">main =</span> <span class="st">"Fractional diffusion with drift at t=1"</span>)</a></code></pre></div>
-<p><img src="README-CTRW-limit-1.png" width="672"></p>
+<p><img src="README-CTRW-limit-1.png" width="700"></p>
 </div>
 </div>
 <div id="vignettes" class="section level2">
@@ -161,29 +169,40 @@
 </ul>
 </div>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2 class="hasAnchor">
-<a href="#sidebar" class="anchor"></a>Links</h2>
+    <div class="links">
+<h2>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cran.r-project.org/package=MittagLeffleR">https://​cran.r-project.org/​package=MittagLeffleR</a>
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=MittagLeffleR">https://​cloud.r-project.org/​package=MittagLeffleR</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/strakaps/MittagLeffleR/issues">https://​github.com/​strakaps/​MittagLeffleR/​issues</a>
 </li>
 </ul>
+</div>
+<div class="license">
 <h2>License</h2>
-<p>GPL (&gt;= 2)</p>
+<ul class="list-unstyled">
+<li>GPL (&gt;= 2)</li>
+</ul>
+</div>
+<div class="citation">
 <h2>Citation</h2>
 <ul class="list-unstyled">
 <li><a href="authors.html">Citing MittagLeffleR</a></li>
 </ul>
+</div>
+<div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Gurtek Gill <br><small class="roles"> Author </small> </li>
-<li>Peter Straka <br><small class="roles"> Author, maintainer </small> </li>
+<li>Peter Straka <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Gurtek Gill <br><small class="roles"> Author </small>  </li>
+<li><a href="authors.html">All authors...</a></li>
 </ul>
+</div>
+
+      <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/strakaps/MittagLeffleR"><img src="https://api.travis-ci.org/strakaps/MittagLeffleR.svg?branch=master" alt="Travis-CI Build Status"></a></li>
@@ -192,12 +211,13 @@
 <li><a href="https://cran.r-project.org/package=MittagLeffleR"><img src="http://cranlogs.r-pkg.org/badges/grand-total/MittagLeffleR?color=blue" alt="DL_Total"></a></li>
 </ul>
 </div>
+</div>
 
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Gurtek Gill, Peter Straka.</p>
+  <p>Developed by Peter Straka, Gurtek Gill.</p>
 </div>
 
 <div class="pkgdown">
@@ -206,6 +226,8 @@
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

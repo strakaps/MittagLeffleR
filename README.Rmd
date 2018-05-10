@@ -66,8 +66,7 @@ library(MittagLeffleR)
 
 ## Usage
 
-See the reference manual at 
-[strakaps.github.io/MittagLeffleR/reference/index.html](https://strakaps.github.io/MittagLeffleR/reference/index.html)
+See [reference manual](https://strakaps.github.io/MittagLeffleR/reference/index.html).
 
 ## Examples
 
