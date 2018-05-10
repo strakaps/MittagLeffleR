@@ -9,7 +9,7 @@
 #' @return The output of \code{\link{optim}}.
 #' @examples
 #' library(magrittr)
-#' rml(n = 1000, tail = 0.8, scale = 1000) %>% mlmle()
+#' rml(n = 100, tail = 0.8, scale = 1000) %>% mlmle()
 #' @export
 mlmle <- function(data, ...) {
   # theta_orig: the parameter (tail, scale)

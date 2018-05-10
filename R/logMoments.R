@@ -21,7 +21,7 @@
 #' @rdname logMomentEstimator
 #' @export
 #' @examples
-#' logMomentEstimator(rml(n = 100000, scale = 0.03, tail = 0.99), alpha=0.95)
+#' logMomentEstimator(rml(n = 1000, scale = 0.03, tail = 0.84), alpha=0.95)
 #' @return 
 #' A named vector with entries (nu, delta, nuLo, nuHi, deltaLo, deltaHi)
 #' where nu is the tail parameter and delta the scale parameter of the 
