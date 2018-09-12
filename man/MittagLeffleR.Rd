@@ -93,3 +93,4 @@ Mittag-Leffler distribution. (2017, May 3).
 In Wikipedia, The Free Encyclopedia.
 \url{https://en.wikipedia.org/w/index.php?title=Mittag-Leffler_distribution&oldid=778429885}
 }
+\concept{Mittag Leffler Distribution}

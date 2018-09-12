@@ -8,8 +8,8 @@
 <title>Mittag-Leffler Family of Distributions • MittagLeffleR</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><meta property="og:title" content="Mittag-Leffler Family of Distributions">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script><meta property="og:title" content="Mittag-Leffler Family of Distributions">
 <meta property="og:description" content="Implements the Mittag-Leffler function, distribution,
   random variate generation, and estimation. Based on the Laplace-Inversion
   algorithm by Garrappa, R. (2015) &lt;doi:10.1137/140971191&gt;.">
@@ -103,16 +103,16 @@
 <h3 class="hasAnchor">
 <a href="#stable-release-on-cran" class="anchor"></a>Stable release on CRAN</h3>
 <p>You can install MittagLeffleR from CRAN via</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">"MittagLeffleR"</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(MittagLeffleR)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"MittagLeffleR"</span>)
+<span class="kw">library</span>(MittagLeffleR)</code></pre></div>
 </div>
 <div id="development-version-on-github" class="section level3">
 <h3 class="hasAnchor">
 <a href="#development-version-on-github" class="anchor"></a>Development version on Github</h3>
 <p>Install the <code>devtools</code> package first, then</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"strakaps/MittagLeffler"</span>)</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">library</span>(MittagLeffleR)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"strakaps/MittagLeffler"</span>)
+<span class="kw">library</span>(MittagLeffleR)</code></pre></div>
 </div>
 </div>
 <div id="usage" class="section level2">
@@ -127,12 +127,12 @@
 <h3 class="hasAnchor">
 <a href="#fitting-a-mittag-leffler-distribution" class="anchor"></a>Fitting a Mittag-Leffler distribution</h3>
 <p>Generate a dataset first:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(MittagLeffleR)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">y =<span class="st"> </span><span class="kw"><a href="reference/MittagLeffleR.html">rml</a></span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">tail =</span> <span class="fl">0.9</span>, <span class="dt">scale =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MittagLeffleR)
+y =<span class="st"> </span><span class="kw"><a href="reference/MittagLeffleR.html">rml</a></span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">tail =</span> <span class="fl">0.9</span>, <span class="dt">scale =</span> <span class="dv">2</span>)</code></pre></div>
 <p>Fit the distribution:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/logMomentEstimator.html">logMomentEstimator</a></span>(y, <span class="fl">0.95</span>)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;      tail     scale    tailLo    tailHi   scaleLo   scaleHi </span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; 0.8990526 2.0462438 0.8987053 0.8993999 2.0442456 2.0482421</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/logMomentEstimator.html">logMomentEstimator</a></span>(y, <span class="fl">0.95</span>)
+<span class="co">#&gt;      tail     scale    tailLo    tailHi   scaleLo   scaleHi </span>
+<span class="co">#&gt; 0.9030906 2.0045782 0.9027436 0.9034377 2.0026354 2.0065210</span></code></pre></div>
 <p>Read off</p>
 <ul>
 <li>the shape parameter <span class="math inline">\(0 &lt; \nu &lt; 1\)</span>,</li>
@@ -146,15 +146,26 @@
 <p>Standard Brownian motion with drift <span class="math inline">\(1\)</span> has, at time <span class="math inline">\(t\)</span>, has a normal probability density <span class="math inline">\(n(x|\mu = t, \sigma^2 = t)\)</span>. A fractional diffusion at time <span class="math inline">\(t\)</span> has the time-changed probability density</p>
 <p><span class="math display">\[p(x,t) = \int n(x| \mu = u, \sigma^2 = u)h(u,t) du\]</span></p>
 <p>where <span class="math inline">\(h(u,t)\)</span> is a second type Mittag-Leffler probability density with scale <span class="math inline">\(t^\alpha\)</span>. (We assume <span class="math inline">\(t=1\)</span>.)</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">tail &lt;-<span class="st"> </span><span class="fl">0.65</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">dx &lt;-<span class="st"> </span><span class="fl">0.01</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">5</span>,dx)</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">umax &lt;-<span class="st"> </span><span class="kw"><a href="reference/MittagLeffleR.html">qml</a></span>(<span class="dt">p =</span> <span class="fl">0.99</span>, <span class="dt">tail =</span> tail, <span class="dt">scale =</span> <span class="dv">1</span>, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">u &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,umax,dx)</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">h &lt;-<span class="st"> </span><span class="kw"><a href="reference/MittagLeffleR.html">dml</a></span>(<span class="dt">x =</span> u, <span class="dt">tail =</span> tail, <span class="dt">scale =</span> <span class="dv">1</span>, <span class="dt">second.type =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">N &lt;-<span class="st"> </span><span class="kw">outer</span>(x,u,<span class="cf">function</span>(x,u){<span class="kw">dnorm</span>(<span class="dt">x =</span> x, <span class="dt">mean =</span> u, <span class="dt">sd =</span> <span class="kw">sqrt</span>(u))})</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">p &lt;-<span class="st"> </span>N <span class="op">%*%</span><span class="st"> </span>h <span class="op">*</span><span class="st"> </span>dx</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="kw">plot</span>(x,p, <span class="dt">type=</span><span class="st">'l'</span>, <span class="dt">main =</span> <span class="st">"Fractional diffusion with drift at t=1"</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(tidyr)
+tail &lt;-<span class="st"> </span><span class="fl">0.65</span>
+dx &lt;-<span class="st"> </span><span class="fl">0.01</span>
+x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">5</span>,dx)
+t &lt;-<span class="st"> </span><span class="dv">3</span><span class="op">^</span>(<span class="op">-</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)
+<span class="co"># cut off time so that only 1 % of probability is lost</span>
+umax &lt;-<span class="st"> </span><span class="kw"><a href="reference/MittagLeffleR.html">qml</a></span>(<span class="dt">p =</span> <span class="fl">0.99</span>, <span class="dt">tail =</span> tail, <span class="dt">scale =</span> <span class="kw">max</span>(t), <span class="dt">second.type =</span> <span class="ot">TRUE</span>)
+u &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,umax,dx)
+H &lt;-<span class="st"> </span><span class="kw">outer</span>(u,t, <span class="cf">function</span>(u,t) {<span class="kw"><a href="reference/MittagLeffleR.html">dml</a></span>(<span class="dt">x =</span> u, <span class="dt">tail =</span> tail, <span class="dt">scale =</span> t<span class="op">^</span>tail)})
+N &lt;-<span class="st"> </span><span class="kw">outer</span>(x,u,<span class="cf">function</span>(x,u){<span class="kw">dnorm</span>(<span class="dt">x =</span> x, <span class="dt">mean =</span> u, <span class="dt">sd =</span> <span class="kw">sqrt</span>(u))})
+p &lt;-<span class="st"> </span>N <span class="op">%*%</span><span class="st"> </span>H <span class="op">*</span><span class="st"> </span>dx
+df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(p)
+<span class="kw">names</span>(df) &lt;-<span class="st"> </span><span class="kw">sapply</span>(t, <span class="cf">function</span>(t){<span class="kw">paste0</span>(<span class="st">"T="</span>,<span class="kw">round</span>(t,<span class="dv">2</span>))})
+df[<span class="st">'x'</span>] &lt;-<span class="st"> </span>x
+df <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather</a></span>(<span class="dt">key =</span> <span class="st">"time"</span>, <span class="dt">value =</span> <span class="st">"density"</span>, <span class="op">-</span>x) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x=</span>x, <span class="dt">y=</span>density, <span class="dt">col=</span>time)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_path">geom_line</a></span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ggtitle</a></span>(<span class="st">"Subdiffusion with drift"</span>))</code></pre></div>
 <p><img src="README-CTRW-limit-1.png" width="700"></p>
 </div>
 </div>

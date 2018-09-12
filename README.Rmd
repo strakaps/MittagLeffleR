@@ -104,15 +104,26 @@ where $h(u,t)$ is a second type Mittag-Leffler probability density with
 scale $t^\alpha$. (We assume $t=1$.)
 
 ```{r CTRW-limit, warning=FALSE}
+library(ggplot2)
+library(tidyr)
 tail <- 0.65
 dx <- 0.01
 x <- seq(-2,5,dx)
-umax <- qml(p = 0.99, tail = tail, scale = 1, second.type = TRUE)
+t <- 3^(-1:2)
+# cut off time so that only 1 % of probability is lost
+umax <- qml(p = 0.99, tail = tail, scale = max(t), second.type = TRUE)
 u <- seq(0.01,umax,dx)
-h <- dml(x = u, tail = tail, scale = 1, second.type = TRUE)
+H <- outer(u,t, function(u,t) {dml(x = u, tail = tail, scale = t^tail)})
 N <- outer(x,u,function(x,u){dnorm(x = x, mean = u, sd = sqrt(u))})
-p <- N %*% h * dx
-plot(x,p, type='l', main = "Fractional diffusion with drift at t=1")
+p <- N %*% H * dx
+df <- data.frame(p)
+names(df) <- sapply(t, function(t){paste0("T=",round(t,2))})
+df['x'] <- x
+df %>% 
+  gather(key = "time", value = "density", -x) %>%
+  ggplot(mapping = aes(x=x, y=density, col=time)) + 
+  geom_line() + 
+  labs(ggtitle("Subdiffusion with drift"))
 ```
 
 
