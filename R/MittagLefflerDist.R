@@ -160,11 +160,11 @@ qml <- function(p, tail, scale=1, second.type=FALSE, lower.tail=TRUE,
 qml1 <- function(p,tail,scale=1) {
   x <- numeric(length(p))
   for (i in 1:length(p)) {
-    qml_p <- function(t) {pml(t,tail,scale) - p[i]}
-    x[i] <- stats::uniroot(qml_p, interval = c(10^-14,100),
-                           extendInt="upX", tol = 1e-14)$root
+    qml_p <- function(t) {pml(exp(t),tail,scale) - p[i]}
+    x[i] <- stats::uniroot(qml_p, interval = c(log(10^-14),log(100)),
+    extendInt="yes", tol = 1e-14)$root
   }
-  return(x)
+  return(exp(x))
 }
 
 # type 2 with unit scale
