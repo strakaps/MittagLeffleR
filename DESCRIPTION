@@ -2,12 +2,14 @@ Package: MittagLeffleR
 Type: Package
 Title: Mittag-Leffler Family of Distributions
 Version: 0.3.0
-Author: Gurtek Gill [aut], Peter Straka [aut, cre]
-Maintainer: Peter Straka <p.straka@unsw.edu.au>
+Author: Katharina Hees [aut, cre], Gurtek Gill [aut], Roberto Garrappa [aut], Peter Straka [aut]
+Maintainer: Katharina Hees <heeskatharina@gmail.com>
 Authors@R: c(
-    person("Peter", "Straka", email = "p.straka@unsw.edu.au", 
+    person("Katharina", "Hees", email = "heeskatharina@gmail.com", 
             role = c("aut", "cre")),
-    person("Gurtek", "Gill", email = "rickygill01@gmail.com", 
+    person("Peter", "Straka", email = "straka.ps@gmail.com", 
+            role = "aut"),
+    person("Gurtek", "Gill", 
             role = "aut"),
     person("Roberto", "Garrappa", email = "roberto.garrappa@uniba.it", 
             role = "ctb")
