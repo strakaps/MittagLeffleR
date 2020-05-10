@@ -63,6 +63,7 @@
 #' @family Mittag Leffler Distribution
 #' @export
 dml <- function(x,tail,scale=1,log=FALSE, second.type=FALSE){
+  stopifnot(tail > 0, tail <= 1, scale > 0, x >= 0)
   if (length(tail) > 1){
     stop("length(tail) must be 1.")
   }
@@ -104,6 +105,7 @@ dml2 <- function(u,tail) {
 #' @export
 pml <- function(q, tail, scale=1, second.type=FALSE, lower.tail=TRUE, 
                 log.p=FALSE) {
+  stopifnot(tail > 0, tail <= 1, scale > 0, q > 0)
   # rescale
   q <- q/scale
   if (!second.type){
@@ -143,6 +145,7 @@ pml2 <- function(q,tail) {
 
 qml <- function(p, tail, scale=1, second.type=FALSE, lower.tail=TRUE,
                 log.p=FALSE) {
+  stopifnot(tail > 0, tail <= 1, scale > 0, p >= 0, p <= 1)
   if (log.p) {
     p <- exp(p)
   }
@@ -183,12 +186,9 @@ qml2 <- function(p, tail){
 
 #' @export
 #' @family Mittag Leffler Distribution
-#' @param n number of observations. If length(n) > 1, the length is taken
-#'        to be the number required.
+#' @param n number of random draws. 
 rml <- function(n,tail,scale=1, second.type=FALSE){
-  if (length(n) > 1){
-    n <- length(n)
-  }
+  stopifnot(tail > 0, tail <= 1, scale > 0, class(n) == "numeric", length(n) == 1)
   if (!second.type){
     x <- scale * rml1(n,tail)
   } else {
