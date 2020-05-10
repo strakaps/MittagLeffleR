@@ -199,6 +199,7 @@ rml <- function(n,tail,scale=1, second.type=FALSE){
 
 # unit scale; see e.g. Haubold, Mathai & Saxena (2011)
 rml1 <- function(n, tail){
+  if (tail == 1) return(rexp(n)) 
   # the scale parameter in the Samorodnitsky & Taqqu representation which
   # makes the stable distribution have Laplace transform exp(-s^tail):
   gamma <- (cos(pi*tail/2))^(1/tail)
