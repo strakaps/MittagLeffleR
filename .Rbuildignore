@@ -1,0 +1,7 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.travis\.yml$
+.travis.yml
+README.Rmd
+README-CTRW-limit-1.png
+docs/

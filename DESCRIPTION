@@ -2,7 +2,7 @@ Package: MittagLeffleR
 Type: Package
 Title: Mittag-Leffler Family of Distributions
 Version: 0.4.0
-Author: Katharina Hees [aut, cre], Gurtek Gill [aut], Roberto Garrappa [aut], Peter Straka [aut]
+Author: Katharina Hees [aut, cre], Peter Straka [aut], Gurtek Gill [aut], Roberto Garrappa [ctb]
 Maintainer: Katharina Hees <heeskatharina@gmail.com>
 Authors@R: c(
     person("Katharina", "Hees", email = "heeskatharina@gmail.com", 

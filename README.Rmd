@@ -24,7 +24,7 @@ The MittagLeffleR R package
 
 * calculates probability densities, probabilities and quantiles, based on a   
   [Laplace-Inversion algorithm](https://au.mathworks.com/matlabcentral/fileexchange/48154-the-mittag-leffler-function) 
-  by [Roberto Garrappa](https://twitter.com/rgarrappa).
+  by [Roberto Garrappa](https://twitter.com/rgarrappa/).
 * simulates random variables from both types Mittag-Leffler distributions
 * fits a Mittag-Leffler distribution to data, 
   using the 
