@@ -39,11 +39,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Peter Straka \email{p.straka@unsw.edu.au}
+\strong{Maintainer}: Katharina Hees \email{heeskatharina@gmail.com}
 
 Authors:
 \itemize{
-  \item Gurtek Gill \email{rickygill01@gmail.com}
+  \item Peter Straka \email{straka.ps@gmail.com}
+  \item Gurtek Gill
 }
 
 Other contributors:

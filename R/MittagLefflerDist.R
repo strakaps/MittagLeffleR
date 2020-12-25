@@ -43,10 +43,6 @@
 #' Mittag-Leffler distribution. (2017, May 3).
 #' In Wikipedia, The Free Encyclopedia.
 #' \url{https://en.wikipedia.org/w/index.php?title=Mittag-Leffler_distribution&oldid=778429885}
-#' 
-#' @name MLdistribution
-
-
 #' @param x,q vector of quantiles.
 #' @param tail tail parameter.
 #' @param scale scale parameter.
@@ -199,7 +195,7 @@ rml <- function(n,tail,scale=1, second.type=FALSE){
 
 # unit scale; see e.g. Haubold, Mathai & Saxena (2011)
 rml1 <- function(n, tail){
-  if (tail == 1) return(rexp(n)) 
+  if (tail == 1) return(stats::rexp(n)) 
   # the scale parameter in the Samorodnitsky & Taqqu representation which
   # makes the stable distribution have Laplace transform exp(-s^tail):
   gamma <- (cos(pi*tail/2))^(1/tail)
