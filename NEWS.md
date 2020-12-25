@@ -1,3 +1,7 @@
+## MittagLeffleR 0.4.0 [2020-12-25]
+
+* Fix bug in qml()
+
 ## MittagLeffleR 0.3.0 [2018-04-24]
 
 * Added maximum likelihood estimator
