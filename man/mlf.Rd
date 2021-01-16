@@ -28,7 +28,7 @@ mlf(2,0.7)
 \references{
 Garrappa, R. (2015). Numerical Evaluation of Two and Three Parameter
 Mittag-Leffler Functions. SIAM Journal on Numerical Analysis, 53(3),
- 1350–1369. \url{http://doi.org/10.1137/140971191}
+ 1350–1369. \doi{10.1137/140971191}
 
 The Mittag-Leffler function. MathWorks File Exchange.
 \url{https://au.mathworks.com/matlabcentral/fileexchange/48154-the-mittag-leffler-function}

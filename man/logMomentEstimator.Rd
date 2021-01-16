@@ -20,7 +20,7 @@ Mittag-Leffler distribution, with confidence intervals
 \description{
 Tail and scale parameter of the Mittag-Leffler distribution are estimated
 by matching with the first two empirical log-moments
-(see Cahoy et al., \url{http://doi.org/10.1016/j.jspi.2010.04.016}).
+(see Cahoy et al., \doi{10.1016/j.jspi.2010.04.016}).
 }
 \examples{
 logMomentEstimator(rml(n = 1000, scale = 0.03, tail = 0.84), alpha=0.95)
@@ -29,10 +29,10 @@ logMomentEstimator(rml(n = 1000, scale = 0.03, tail = 0.84), alpha=0.95)
 Cahoy, D. O., Uchaikin, V. V., & Woyczynski Wojbor, W. A. (2010).  
 Parameter estimation for fractional Poisson processes.  
 Journal of Statistical Planning and Inference, 140(11), 3106–3120. 
-\url{http://doi.org/10.1016/j.jspi.2010.04.016}
+\doi{10.1016/j.jspi.2010.04.016}
 
 Cahoy, D. O. (2013). 
 Estimation of Mittag-Leffler Parameters. 
 Communications in Statistics - Simulation and Computation, 42(2), 303–315. 
-\url{http://doi.org/10.1080/03610918.2011.640094}
+\doi{10.1080/03610918.2011.640094}
 }

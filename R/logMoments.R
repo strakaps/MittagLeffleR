@@ -14,7 +14,7 @@
 #' 
 #' Tail and scale parameter of the Mittag-Leffler distribution are estimated
 #' by matching with the first two empirical log-moments
-#' (see Cahoy et al., \url{http://doi.org/10.1016/j.jspi.2010.04.016}).
+#' (see Cahoy et al., \doi{10.1016/j.jspi.2010.04.016}).
 #' 
 #' @param x     A vector of non-negative data.
 #' @param alpha Confidence intervals are calculated at level 1 - alpha.
@@ -31,12 +31,12 @@
 #' Cahoy, D. O., Uchaikin, V. V., & Woyczynski Wojbor, W. A. (2010).  
 #' Parameter estimation for fractional Poisson processes.  
 #' Journal of Statistical Planning and Inference, 140(11), 3106–3120. 
-#' \url{http://doi.org/10.1016/j.jspi.2010.04.016}
+#' \doi{10.1016/j.jspi.2010.04.016}
 #' 
 #' Cahoy, D. O. (2013). 
 #' Estimation of Mittag-Leffler Parameters. 
 #' Communications in Statistics - Simulation and Computation, 42(2), 303–315. 
-#' \url{http://doi.org/10.1080/03610918.2011.640094}
+#' \doi{10.1080/03610918.2011.640094}
 
 logMomentEstimator = function (x, alpha=0.05) {
   EULER.C = 0.57721566490153286

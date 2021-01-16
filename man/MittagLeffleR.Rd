@@ -84,7 +84,7 @@ rml(10, 0.7, 1)
 \references{
 Haubold, H. J., Mathai, A. M., & Saxena, R. K. (2011). Mittag-Leffler
 Functions and Their Applications. Journal of Applied Mathematics, 2011, 
-1–51. \url{http://doi.org/10.1155/2011/298628}
+1–51. \doi{10.1155/2011/298628}
 
 Mittag-Leffler distribution. (2017, May 3).
 In Wikipedia, The Free Encyclopedia.
