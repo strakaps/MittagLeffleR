@@ -42,7 +42,8 @@
 <meta property="og:title" content="Log-Moments Estimator for the Mittag-Leffler Distribution (Type 1). — logMomentEstimator" />
 <meta property="og:description" content="Tail and scale parameter of the Mittag-Leffler distribution are estimated
 by matching with the first two empirical log-moments
-(see Cahoy et al., http://doi.org/10.1016/j.jspi.2010.04.016)." />
+(see Cahoy et al., doi: 10.1016/j.jspi.2010.04.016
+)." />
 
 
 
@@ -139,7 +140,8 @@ by matching with the first two empirical log-moments
     <div class="ref-description">
     <p>Tail and scale parameter of the Mittag-Leffler distribution are estimated
 by matching with the first two empirical log-moments
-(see Cahoy et al., <a href='http://doi.org/10.1016/j.jspi.2010.04.016'>http://doi.org/10.1016/j.jspi.2010.04.016</a>).</p>
+(see Cahoy et al., doi: <a href='https://doi.org/10.1016/j.jspi.2010.04.016'>10.1016/j.jspi.2010.04.016</a>
+).</p>
     </div>
 
     <pre class="usage"><span class='fu'>logMomentEstimator</span><span class='op'>(</span><span class='va'>x</span>, alpha <span class='op'>=</span> <span class='fl'>0.05</span><span class='op'>)</span></pre>
@@ -168,16 +170,16 @@ Mittag-Leffler distribution, with confidence intervals
     <p>Cahoy, D. O., Uchaikin, V. V., &amp; Woyczynski Wojbor, W. A. (2010).  
 Parameter estimation for fractional Poisson processes.  
 Journal of Statistical Planning and Inference, 140(11), 3106–3120. 
-<a href='http://doi.org/10.1016/j.jspi.2010.04.016'>http://doi.org/10.1016/j.jspi.2010.04.016</a></p>
+doi: <a href='https://doi.org/10.1016/j.jspi.2010.04.016'>10.1016/j.jspi.2010.04.016</a></p>
 <p>Cahoy, D. O. (2013). 
 Estimation of Mittag-Leffler Parameters. 
 Communications in Statistics - Simulation and Computation, 42(2), 303–315. 
-<a href='http://doi.org/10.1080/03610918.2011.640094'>http://doi.org/10.1080/03610918.2011.640094</a></p>
+doi: <a href='https://doi.org/10.1080/03610918.2011.640094'>10.1080/03610918.2011.640094</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>logMomentEstimator</span><span class='op'>(</span><span class='fu'><a href='Mittag-Leffler.html'>rml</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fl'>1000</span>, scale <span class='op'>=</span> <span class='fl'>0.03</span>, tail <span class='op'>=</span> <span class='fl'>0.84</span><span class='op'>)</span>, alpha<span class='op'>=</span><span class='fl'>0.95</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;       tail      scale     tailLo     tailHi    scaleLo    scaleHi 
-#&gt; 0.85682030 0.03128040 0.85571990 0.85792069 0.03117594 0.03138487 </div></pre>
+#&gt; 0.85095311 0.03129599 0.84985327 0.85205294 0.03119034 0.03140165 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

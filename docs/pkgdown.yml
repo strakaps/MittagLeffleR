@@ -1,9 +1,9 @@
-pandoc: 2.7.3
+pandoc: 2.9.2.1
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   MLdist: MLdist.html
   parametrisation: parametrisation.html
   probsNquantiles: probsNquantiles.html
-last_built: 2020-12-25T19:50Z
+last_built: 2021-01-16T11:03Z
 
