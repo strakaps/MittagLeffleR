@@ -28,7 +28,7 @@ The MittagLeffleR R package
 * simulates random variables from both types Mittag-Leffler distributions
 * fits a Mittag-Leffler distribution to data, 
   using the 
-  [log-moments estimator](http://doi.org/10.1080/03610918.2011.640094) 
+  [log-moments estimator](https://doi.org/10.1080/03610918.2011.640094) 
   (for the first type of distribution) by 
   [Dexter Cahoy](https://www.uhd.edu/academics/sciences/mathematics-statistics/Pages/bio-cahoyd.aspx). 
 
