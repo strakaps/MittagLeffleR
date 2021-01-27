@@ -31,20 +31,8 @@ mlmle <- function(data, ...) {
   }
   opt_out <- stats::optim(theta_init, fn = log_l, ...)
   alt_loglik  <- -opt_out$value
-  null_loglik <-
-    -stats::optimise(
-      f = function(rate)
-        - sum(stats::dexp(data, rate, log = TRUE)),
-      interval = c(0, 1000)
-    )$objective
-  p_value <-
-    stats::pchisq(2 * (alt_loglik - null_loglik),
-           df = 1,
-           lower.tail = FALSE)
   list(
     par = theta_orig(opt_out$par),
-    loglik = alt_loglik,
-    null_loglik = null_loglik,
-    p_value = p_value
+    loglik = alt_loglik
   )
 }
