@@ -184,7 +184,7 @@ qml2 <- function(p, tail){
 #' @family Mittag Leffler Distribution
 #' @param n number of random draws. 
 rml <- function(n,tail,scale=1, second.type=FALSE){
-  stopifnot(tail > 0, tail <= 1, scale > 0, class(n) == "numeric", length(n) == 1)
+  stopifnot(tail > 0, tail <= 1, scale > 0, is.numeric(n) , length(n) == 1)
   if (!second.type){
     x <- scale * rml1(n,tail)
   } else {
