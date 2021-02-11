@@ -58,16 +58,25 @@
 #' @name Mittag-Leffler
 #' @family Mittag Leffler Distribution
 #' @export
+
 dml <- function(x,tail,scale=1,log=FALSE, second.type=FALSE){
-  stopifnot(tail > 0, tail <= 1, scale > 0, x >= 0)
+  stopifnot(tail > 0, tail <= 1, scale > 0)
   if (length(tail) > 1){
     stop("length(tail) must be 1.")
   }
+  ind <- which(x <= 0)
+  x[ind] <- 0
   if (second.type==FALSE) {
-    return(dml1(x,tail,scale,log))
-  } else {
+    y <- dml1(x,tail,scale,log)
+  } 
+  else {
     y <- dml2(x/scale,tail)/scale
-    if (!log) return(y) else return(log(y))
+  }
+  y[ind] <- 0
+  if (!log) {return(y)} 
+  else {
+      stopifnot(all(y != 0))
+      return(log(y))
   }
 }
 
@@ -101,7 +110,9 @@ dml2 <- function(u,tail) {
 #' @export
 pml <- function(q, tail, scale=1, second.type=FALSE, lower.tail=TRUE, 
                 log.p=FALSE) {
-  stopifnot(tail > 0, tail <= 1, scale > 0, q > 0)
+  stopifnot(tail > 0, tail <= 1, scale > 0)
+  ind <- which(q <= 0)
+  q[ind] <- 1
   # rescale
   q <- q/scale
   if (!second.type){
@@ -115,6 +126,7 @@ pml <- function(q, tail, scale=1, second.type=FALSE, lower.tail=TRUE,
   if (log.p) {
     p <- log(p)
   }
+  p[ind] <- 0
   return(p)
 }
 
@@ -153,12 +165,13 @@ qml <- function(p, tail, scale=1, second.type=FALSE, lower.tail=TRUE,
   } else {
     q <- scale * qml2(p, tail)
   }
+  q[p == 0] <- 0
   return(q)
 }
 
 qml1 <- function(p,tail,scale=1) {
   x <- numeric(length(p))
-  for (i in 1:length(p)) {
+  for (i in seq_along(p)) {
     qml_p <- function(t) {pml(exp(t),tail,scale) - p[i]}
     x[i] <- stats::uniroot(qml_p, interval = c(log(10^-14),log(100)),
     extendInt="yes", tol = 1e-14)$root
@@ -184,7 +197,7 @@ qml2 <- function(p, tail){
 #' @family Mittag Leffler Distribution
 #' @param n number of random draws. 
 rml <- function(n,tail,scale=1, second.type=FALSE){
-  stopifnot(tail > 0, tail <= 1, scale > 0, class(n) == "numeric", length(n) == 1)
+  stopifnot(tail > 0, tail <= 1, scale > 0, is.numeric(n), length(n) == 1)
   if (!second.type){
     x <- scale * rml1(n,tail)
   } else {
