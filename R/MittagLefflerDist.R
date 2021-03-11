@@ -64,10 +64,13 @@ dml <- function(x,tail,scale=1,log=FALSE, second.type=FALSE){
   if (length(tail) > 1){
     stop("length(tail) must be 1.")
   }
+  if(log == TRUE & any(x <= 0)) {
+    stop("For x <= 0 the density is zero. You schould not use log = T")
+  }
   ind <- which(x <= 0)
   x[ind] <- 0
   if (second.type==FALSE) {
-    y <- dml1(x,tail,scale,log)
+    y <- dml1(x,tail,scale)
   } 
   else {
     y <- dml2(x/scale,tail)/scale
