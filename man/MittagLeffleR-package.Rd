@@ -39,11 +39,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Katharina Hees \email{heeskatharina@gmail.com}
+\strong{Maintainer}: Peter Straka \email{straka.ps@gmail.com}
 
 Authors:
 \itemize{
-  \item Peter Straka \email{straka.ps@gmail.com}
+  \item Katharina Hees \email{heeskatharina@gmail.com}
   \item Gurtek Gill
 }
 
