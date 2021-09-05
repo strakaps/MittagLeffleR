@@ -1,3 +1,7 @@
+## MittagLeffleR 0.4.1 (2021-09-05)
+
+* Remove test for exponential distribution
+
 ## MittagLeffleR 0.4.0 [2020-12-25]
 
 * Fix bug in qml()
