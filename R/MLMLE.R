@@ -27,6 +27,7 @@ mlmle <- function(data, ...) {
   # run optimization in unconstrained parameters
   log_l <- function(theta) {
     theta <- theta_orig(theta)
+    theta[1] <- min(theta[1], 1)
     - sum(dml(data, theta[1], theta[2], log = TRUE))
   }
   opt_out <- stats::optim(theta_init, fn = log_l, ...)
